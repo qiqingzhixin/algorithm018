@@ -65,7 +65,7 @@ int maxSumSubmatrix3(vector<vector<int>> &matrix, int k) {
 
 /**
  * 363 给定一个非空二维矩阵 matrix 和一个整数 k，找到这个矩阵内部不大于 k 的最大矩形和
- * 当宽度和高度都为1
+ * 当宽度和高度都为1 ok
  *
  * f(iStart,jStart,iEnd,jEnd)=f(iStart,jStart,iEnd-1,jEnd-i)+f(iEnd-1,jStart,iEnd,jEnd-1)+f(iStart,jEnd-1,iEnd-1,jEnd)+f(iEnd,jEnd,iEnd,jEnd)
  * @param matrix
