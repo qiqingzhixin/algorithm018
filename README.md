@@ -30,4 +30,88 @@
 2. 
 
 
+1. 整10道算法题 X
+2.完成docker 博客 √
+3.完成分布式锁 √
+4.完成websocket
+
+5.rabbitmq
+6.actual
+
+
+17.电话号码组合
+51 n皇后问题
+
+
+102 层次遍历
+433 最小基因变化
+22 生成括号 广度优先搜索
+一层里面找到最大值
+岛屿的数量
+
+Day53（12.10）每日一题推荐：
+https://leetcode-cn.com/problems/reverse-bits/
+
+Day54（12.11）每日一题推荐：
+https://leetcode-cn.com/problems/swap-nodes-in-pairs/
+
+Day55（12.12）每日一题推荐：
+https://leetcode-cn.com/problems/relative-sort-array/
+
+Day51（12.8）每日一题推荐：
+https://leetcode-cn.com/problems/valid-perfect-square/
+
+Day52（12.9）每日一题推荐：
+https://leetcode-cn.com/problems/house-robber/
+
+每日打卡链接：https://jinshuju.net/f/NAaoHD
+
+Day50（12.7）每日一题推荐：
+https://leetcode-cn.com/problems/friend-circles/
+
+
+
+
+
+每日打卡链接：https://jinshuju.net/f/NAaoHD
+
+
+
+每日打卡链接：https://jinshuju.net/f/NAaoHD
+
+
+
+每日打卡链接：https://jinshuju.net/f/NAaoHD
+
+
+
+每日打卡链接：https://jinshuju.net/f/NAaoHD
+
+
+
+每日打卡链接：https://jinshuju.net/f/NAaoHD
+
+
+每日打卡链接：https://jinshuju.net/f/NAaoHD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
