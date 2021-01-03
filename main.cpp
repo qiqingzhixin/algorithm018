@@ -1,18 +1,18 @@
+#include "windows.h"
+#include <algorithm>
 #include <iostream>
-#include <time.h>
-#include<stdlib.h>
-#include<string>
-#include<vector>
-#include<math.h>
-#include<map>
-#include<stack>
+#include <map>
+#include <math.h>
+#include <queue>
+#include <set>
 #include <sstream>
-#include<algorithm>
+#include <stack>
+#include <stdlib.h>
+#include <string>
+#include <time.h>
 #include <unordered_map>
-#include<queue>
-#include<set>
-#include<unordered_set>
-
+#include <unordered_set>
+#include <vector>
 
 using namespace std;
 
@@ -178,15 +178,16 @@ void merge(vector<int> &nums1, int m, vector<int> &nums2, int n);
 class MyCircularDeque {
 
 private:
-    //æœ€å¤§å®¹é‡
+    //×î´óÈİÁ¿
     int maxSize;
-    //å…ƒç´ ä¸ªæ•°
+    //ÔªËØ¸öÊı
     int size;
-    //å¤´å…ƒç´ 
+    //Í·ÔªËØ
     int head;
-    //å°¾å…ƒç´ 
+    //Î²ÔªËØ
     int tail;
     int *queue;
+
 public:
     /** Initialize your data structure here. Set the size of the deque to be k. */
     MyCircularDeque(int k) {
@@ -386,12 +387,12 @@ vector<vector<int>> combine2(int n, int k);
 
 /**
  *
- * @param result ç»“æœ
- * @param temp ä¸­é—´å€¼
+ * @param result ½á¹û
+ * @param temp ÖĞ¼äÖµ
  * @param n 1..n
- * @param k æœ‰å‡ ä¸ªæ•°
- * @param i è¯¥å­˜æ”¾ç¬¬å‡ ä¸ªæ•°
- * @param j å­˜æ”¾äº†æœ€å¤§çš„æ•°
+ * @param k ÓĞ¼¸¸öÊı
+ * @param i ¸Ã´æ·ÅµÚ¼¸¸öÊı
+ * @param j ´æ·ÅÁË×î´óµÄÊı
  */
 void combineHelp(vector<vector<int>> &result, vector<int> &temp, int n, int k, int i, int j);
 
@@ -408,9 +409,8 @@ void permuteUniqueHelp(vector<vector<int>> &result, vector<int> &nums, int k);
 
 vector<vector<string>> solveNQueens(int n);
 
-void
-NQueensHelp(vector<vector<string>> &result, vector<int> &temp, int *lie, int *na, int *pie, int n,
-            int k);
+void NQueensHelp(vector<vector<string>> &result, vector<int> &temp, int *lie, int *na, int *pie, int n,
+                 int k);
 
 bool isTrue(int *lie, int *na, int *pie, int n, int k, int i);
 
@@ -463,14 +463,14 @@ bool canJump1(vector<int> &nums);
 
 
 vector<vector<int>> direction529 = {
-        {1,  0},
+        {1, 0},
         {-1, 0},
-        {1,  1},
+        {1, 1},
         {-1, 1},
-        {1,  -1},
+        {1, -1},
         {-1, -1},
-        {0,  -1},
-        {0,  1},
+        {0, -1},
+        {0, 1},
 };
 
 bool canJump(vector<int> &nums);
@@ -604,8 +604,8 @@ class Trie {
 private:
     Trie *root[26] = {nullptr};
     bool end = false;
-public:
 
+public:
     /** Initialize your data structure here. */
 
     Trie() {
@@ -649,7 +649,6 @@ public:
         }
         return true;
     }
-
 };
 
 
@@ -702,6 +701,7 @@ private:
     unordered_map<int, Node2 *> map;
     int cap = 0;
     int count;
+
 public:
     LRUCache(int capacity) {
         cap = capacity;
@@ -718,7 +718,6 @@ public:
     void put(int key, int value) {
         if (count >= cap && head != head->pre) {
             Node2 *p = head->pre;
-
         }
     }
 };
@@ -734,11 +733,10 @@ bool searchMatrix2(vector<vector<int>> &matrix, int target);
 int numIslands2(vector<vector<char>> &grid);
 
 int dict[4][2] = {
-        {0,  1},
-        {1,  0},
+        {0, 1},
+        {1, 0},
         {-1, 0},
-        {0,  -1}
-};
+        {0, -1}};
 
 void visitedIsLands(vector<vector<char>> &grid, int i, int j);
 
@@ -748,23 +746,449 @@ vector<string> generateParenthesis4(int n);
 
 void generateParenthesisHelp4(vector<string> &result, string item, int n, int left, int right);
 
+int maxSatisfaction(vector<int> &satisfaction);
+
+vector<vector<int>> fourSum4(vector<int> &nums, int target);
+
+vector<vector<int>> levelOrderII(Node *root);
+
+//class Node {
+//public:
+//    int val;
+//    vector<Node *> children;
+//
+//    Node() {}
+//
+//    Node(int _val) {
+//        val = _val;
+//    }
+//
+//    Node(int _val, vector<Node *> _children) {
+//        val = _val;
+//        children = _children;
+//    }
+//};
+
+int maxArea2(vector<int> &height);
+
+void reverseStrHelp(string &s, int l, int r);
+
+string reverseWords(string s);
+string reverseWords2(string s);
+string reverseOnlyLetters(string S);
+bool isIsomorphic(string s, string t);
+bool isIsomorphic(string s, string t);
+
+int maxProfit3(vector<int> &prices);
+bool canPlaceFlowers(vector<int> &flowerbed, int n);
 int main() {
-    vector<string> result = generateParenthesis4(3);
-    for (string item:result) {
-        cout << item << endl;
+    vector<int> flowerbed = {0,0,1,0,1};
+    int n = 1;
+    cout << canPlaceFlowers(flowerbed, n) << endl;
+}
+
+/**
+ * 650.ÖÖ»¨ÎÊÌâ
+ * @param flowerbed
+ * @param n
+ * @return
+ */
+bool canPlaceFlowers(vector<int> &flowerbed, int n) {
+    int count = 0;
+    //ÖÖÉÏÒ»¸öÎ»ÖÃ
+    int len = 1;
+    for (int i = 0; i < flowerbed.size(); ++i) {
+        if (flowerbed[i] == 0) {
+            len++;
+        } else {
+            count += (len - 1) / 2;
+            len = 0;
+        }
     }
+    count += len / 2;
+    return count >= n;
+}
+
+/**
+ * III
+ * @param prices
+ * @return
+ */
+int maxProfit3(vector<int> &prices) {
+    int len = prices.size();
+    //    int *p[2][2] = new int[len][2][2]{{{0}}};
+}
+
+/**
+ * 330.°´ÕÕÒªÇó²¹ÆëÊı×é
+ * @param nums
+ * @param n
+ * @return
+ */
+int minPatches(vector<int> &nums, int n) {
+    int x = 1;
+    int index = 0;
+    int len = nums.size();
+    int count = 0;
+    while (x <= n) {
+        if (nums.size() > index && nums[index] <= x) {
+            x += nums[index++];
+        } else {
+            x *= 2;
+            count++;
+        }
+    }
+    return count;
+}
+
+/**
+ * 680.ÑéÖ¤»ØÎÄ×Ö·û´®
+ * @param s
+ * @return
+ */
+bool validPalindrome(string s) {
+}
+
+/**
+ * 205.Í¬¹¹×Ö·û´®
+ */
+bool isIsomorphic(string s, string t) {
+    if (s.size() != t.size()) {
+        return false;
+    }
+    int counts[2][255]{{0}};
+    for (int i = 0; i < s.size(); ++i) {
+        if (counts[0][s[i]] == 0 && counts[1][t[i]] == 0) {
+            counts[0][s[i]] = t[i];
+            counts[1][t[i]] = s[i];
+            continue;
+        } else if (counts[0][s[i]] != t[i] || counts[1][t[i]] != s[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+/**
+ * 917.½ö½ö·´×ª×ÖÄ¸
+ * @param S
+ * @return
+ */
+string reverseOnlyLetters(string S) {
+    int left = 0;
+    int right = S.size() - 1;
+    while (left < right) {
+        if (!isalpha(S[left])) {
+            left++;
+            continue;
+        }
+        if (!isalpha(S[right])) {
+            right--;
+            continue;
+        }
+        char temp = S[left];
+        S[left] = S[right];
+        S[right] = temp;
+        left++;
+        right--;
+    }
+    return S;
+}
+
+
+/**
+ * 151.·­×ª×Ö·û´®ÀïµÄµ¥´Ê
+ * @param s
+ * @return
+ */
+string reverseWords2(string s) {
+
+    int index = 0;
+    for (int i = 0; i < s.size(); ++i) {
+        if (s[i] == ' ') {
+            if (index == 0) {
+                continue;
+            } else if (s[index - 1] == ' ') {
+                continue;
+            }
+        }
+        s[index] = s[i];
+        index++;
+    }
+    s.erase(s[index - 1] == ' ' ? index - 1 : index);
+
+    int len = s.size();
+    cout << len << endl;
+    reverseStrHelp(s, 0, len - 1);
+    int start = 0;
+    for (int i = 0; i < len; ++i) {
+        if (s[i] == ' ') {
+            reverseStrHelp(s, start, i - 1);
+            start = i + 1;
+        }
+    }
+    reverseStrHelp(s, start, len - 1);
+    return s;
+}
+
+/**
+ * 557. ·´×ª×Ö·û´®ÖĞµÄµ¥´Ê
+ */
+string reverseWords(string s) {
+    int len = s.size();
+    int start = 0;
+    for (int i = 0; i < len; ++i) {
+        if (s[i] == ' ') {
+            reverseStrHelp(s, start, i - 1);
+            start = i + 1;
+        }
+    }
+    reverseStrHelp(s, start, len - 1);
+    return s;
+}
+
+/**
+ * 387.×Ö·û´®ÖĞµÄµÚÒ»¸öÎ¨Ò»×Ö·û
+ * @param s
+ * @return
+ */
+int firstUniqChar2(string s) {
+    if (s.size() == 0) {
+        return -1;
+    }
+    int map[26]{0};
+    for (int i = 0; i < s.size(); ++i) {
+        int index = s[i] - 'a';
+        if (map[index] == 0) {
+            map[index] = index + 1;
+        } else {
+            map[index] = -1;
+        }
+    }
+    int minIndex = s.size() + 2;
+    for (int i = 0; i < 26; ++i) {
+        if (map[i] != -1 && map[i] < minIndex) {
+            minIndex = map[i];
+        }
+    }
+    return minIndex > s.size() ? -1 : (minIndex - 1);
+}
+
+/**
+ * 541.·´×ª×Ö·û´®II
+ * @param s
+ * @param k
+ * @return
+ */
+string reverseStr(string s, int k) {
+    int len = s.size();
+    for (int i = 0; i < len; i += 2 * k) {
+        if (i + k < len) {
+            reverseStrHelp(s, i, i + k - 1);
+        } else {
+            reverseStrHelp(s, i, len - 1);
+        }
+    }
+    return s;
+}
+
+/**
+ * ·´×ªÖ¸¶¨×Ö·û´®
+ * @param s ×Ö·û´®
+ * @param l ·´×ªµÄ¿ªÊ¼
+ * @param r ·´×ªµÄ½áÊø
+ */
+void reverseStrHelp(string &s, int l, int r) {
+    while (l < r) {
+        char a = s[l];
+        s[l] = s[r];
+        s[r] = a;
+        l++;
+        r--;
+    }
+}
+
+/**
+ * ½£Ö¸offer 50 µÚÒ»¸öÖ»³öÏÖÒ»´ÎµÄ×Ö·û
+ * @param s
+ * @return
+ */
+char firstUniqChar(string s) {
+    if (s.size() == 0) {
+        return ' ';
+    }
+    int map[26]{0};
+    int min = s.size();
+    for (int i = 0; i < min; ++i) {
+        if (map[s[i] - 'a'] == 0) {
+            map[s[i] - 'a'] = i + 1;
+        } else {
+            map[s[i] - 'a'] = -1;
+        }
+    }
+    min += 1;
+    for (int j = 0; j < 26; ++j) {
+        if (map[j] > 0 && map[j] <= min) {
+            min = map[j];
+        }
+    }
+    return min > s.size() ? ' ' : s[min - 1];
+}
+
+/**
+ * 771.±¦Ê¯ÓëÊ¯Í·
+ * @param jewels
+ * @param stones
+ * @return
+ */
+int numJewelsInStones(string jewels, string stones) {
+    int js[2][26]{0};
+    for (int i = 0; i < jewels.size(); ++i) {
+        if (jewels[i] >= 'a' && jewels[i] <= 'z') {
+            js[0][jewels[i] - 'a'] = 1;
+        } else {
+            js[1][jewels[i] - 'A'] = 1;
+        }
+    }
+    int count = 0;
+    for (int j = 0; j < stones.size(); ++j) {
+        if ((stones[j] >= 'a' && stones[j] <= 'z' && js[0][stones[j] - 'a'] == 1) ||
+            (stones[j] >= 'A' && stones[j] <= 'Z' && js[1][stones[j] - 'A'] == 1)) {
+            count++;
+        }
+    }
+    return count;
+}
+/**
+ * 58.×îºóÒ»¸öµ¥´ÊµÄ³¤¶È
+ * @param s
+ * @return
+ */
+int lengthOfLastWord(string s) {
+    int len = 0;
+    for (int i = s.size() - 1; i >= 0; --i) {
+        if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z')) {
+            len++;
+        } else if (len == 0) {
+            continue;
+        } else {
+            return len;
+        }
+    }
+    return len;
+}
+
+/**
+ * 709 ×ª»¯³ÉĞ¡Ğ´×ÖÄ¸
+ * @param str
+ * @return
+ */
+string toLowerCase(string str) {
+    for (int i = 0; i < str.size(); ++i) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;
+        }
+    }
+    return str;
+}
+
+int maxArea2(vector<int> &height) {
+    int max = 0;
+    for (int i = 0; i < height.size(); ++i) {
+        for (int j = i + 1; j < height.size(); ++j) {
+            int min = height[i] > height[j] ? height[j] : height[i];
+            int area = min * (j - i);
+            if (area > max) {
+                max = area;
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED);
+            }
+            printf("min(%d,%d)*(%d-%d)=%d*%d=%d\t", height[i], height[j], j, i, min, j - i, area);
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
+                                    FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+        }
+        cout << endl;
+    }
+    return max;
+}
+
+/**
+ * 11. ³É×î¶àË®
+ * @param height
+ * @return
+ */
+int maxArea(vector<int> &height) {
+    int maxNum = 0;
+    int front = 0;
+    int last = height.size() - 1;
+    while (front < last) {
+        int h = min(height[front], height[last]);
+        int temp = h * (last - front);
+        //        cout << front << '\t' << last << '\t' << temp << '\n';
+        maxNum = max(maxNum, temp);
+        if (height[front] < height[last]) {
+            front++;
+        } else {
+            last--;
+        }
+    }
+    return maxNum;
+}
+
+/**
+ * N ²æÊ÷²ã´Î±éÀú
+ * @param root
+ * @return
+ */
+vector<vector<int>> levelOrderII(Node *root) {
+    return {};
+}
+
+/**
+ * 18.ËÄÊıÖ®ºÍ
+ * @param nums
+ * @param target
+ * @return
+ */
+vector<vector<int>> fourSum4(vector<int> &nums, int target) {
+    unordered_map<int, vector<vector<int>>> map;
+    //ÅÅĞò
+    sort(nums.begin(), nums.end(), [](int i, int j) { return i < j; });
+    for (int i = 0; i < nums.size(); ++i) {
+        for (int j = 0; j < nums.size(); ++j) {
+        }
+    }
+    return {};
+}
+
+/**
+ * 1402.×ö²ËË³Ğò
+ * @param satisfaction
+ * @return
+ */
+int maxSatisfaction(vector<int> &satisfaction) {
+    int increment = 0;
+    int sum = 0;
+    //Ğ¡-¡·´ó
+    sort(satisfaction.begin(), satisfaction.end(), [](int i, int j) { return i > j; });
+    for (int i = 0; i < satisfaction.size(); ++i) {
+        increment += satisfaction[i];
+        if (increment <= 0) {
+            break;
+        }
+        sum += increment;
+    }
+    return sum;
+}
+
+/**
+ * 547.ÅóÓÑÈ¦
+ */
+int findCircleNum3(vector<vector<int>> &M) {
     return 0;
 }
 
 /**
- * 547.æœ‹å‹åœˆ
- */
-int findCircleNum(vector<vector<int>> &M) {
-    
-}
-
-/**
- * 22. ç”Ÿæˆæ‹¬å·
+ * 22. Éú³ÉÀ¨ºÅ
  * @param n
  * @return
  */
@@ -788,13 +1212,13 @@ void generateParenthesisHelp4(vector<string> &result, string item, int n, int le
 }
 
 /**
- * 15.ä¸‰æ•°ä¹‹å’Œ
+ * 15.ÈıÊıÖ®ºÍ
  * @param nums
  * @return
  */
 vector<vector<int>> threeSum4(vector<int> &nums) {
 
-    //æ’åº
+    //ÅÅĞò
     sort(nums.begin(), nums.end(), [](int i, int j) { return i < j; });
     vector<vector<int>> result;
     for (int i = 0; i < nums.size(); ++i) {
@@ -831,14 +1255,14 @@ vector<vector<int>> threeSum4(vector<int> &nums) {
 }
 
 /**
- * 127.å•è¯æ¥é¾™
- * åŒå‘æœç´¢
+ * 127.µ¥´Ê½ÓÁú
+ * Ë«ÏòËÑË÷
  */
 int ladderLength3(string beginWord, string endWord, vector<string> &wordList) {
     if (beginWord == endWord) {
         return 1;
     }
-    //å•è¯é›†
+    //µ¥´Ê¼¯
     unordered_set<string> wordSet;
     for (int i = 0; i < wordList.size(); ++i) {
         wordSet.insert(wordList[i]);
@@ -846,18 +1270,18 @@ int ladderLength3(string beginWord, string endWord, vector<string> &wordList) {
     if (wordSet.count(endWord) == 0) {
         return 0;
     }
-    //å¼€å§‹
+    //¿ªÊ¼
     queue<string> beginQueue;
     beginQueue.push(beginWord);
     unordered_set<string> beginVisited;
     beginVisited.insert(beginWord);
-    //ç»“æŸ
+    //½áÊø
     queue<string> endQueue;
     endQueue.push(endWord);
     unordered_set<string> endVisited;
     endVisited.insert(endWord);
     int step = 1;
-    //æ­£åœ¨å¤„ç†çš„
+    //ÕıÔÚ´¦ÀíµÄ
     queue<string> *dealQueue = &beginQueue;
     unordered_set<string> *dealVisited = &beginVisited;
 
@@ -886,7 +1310,7 @@ int ladderLength3(string beginWord, string endWord, vector<string> &wordList) {
             }
         }
         step++;
-        for (string item:beginVisited) {
+        for (string item : beginVisited) {
             if (endVisited.count(item) == 1) {
                 return step;
             }
@@ -896,14 +1320,14 @@ int ladderLength3(string beginWord, string endWord, vector<string> &wordList) {
 }
 
 /**
- * 53.æœ€å¤§å­åºåˆ—å’Œ
+ * 53.×î´ó×ÓĞòÁĞºÍ
  * @param nums
  * @return
  */
 int maxSubArray2(vector<int> &nums) {
     int sum = 0;
     int max = INT32_MIN;
-    for (int item:nums) {
+    for (int item : nums) {
         if (sum >= 0) {
             sum += item;
             if (sum > max) {
@@ -917,7 +1341,7 @@ int maxSubArray2(vector<int> &nums) {
 }
 
 /**
- * 200. å²›å±¿æ•°é‡
+ * 200. µºÓìÊıÁ¿
  * @param grid
  * @return
  */
@@ -983,7 +1407,7 @@ bool searchMatrix2(vector<vector<int>> &matrix, int target) {
 }
 
 /**
- * 33. æœç´¢æ—‹è½¬æ•°ç»„
+ * 33. ËÑË÷Ğı×ªÊı×é
  * @param nums
  * @param target
  * @return
@@ -992,19 +1416,19 @@ int search4(vector<int> &nums, int target) {
     int left = 0, right = nums.size() - 1, n = right, mid;
     while (left <= right) {
         mid = (left + right) >> 1;
-        //æ‰¾åˆ°äº†
+        //ÕÒµ½ÁË
         if (nums[mid] == target) {
             return mid;
         }
         if ((nums[mid] >= nums[0] && target >= nums[0]) || (nums[mid] <= nums[n] && target <= nums[n])) {
-            //åŒä¾§
+            //Í¬²à
             if (nums[mid] > target) {
                 right = mid - 1;
             } else {
                 left = mid + 1;
             }
         } else {
-            //å¼‚ä¾§
+            //Òì²à
             if (nums[mid] > target) {
                 left = mid + 1;
             } else {
@@ -1016,7 +1440,7 @@ int search4(vector<int> &nums, int target) {
 }
 
 /**
- * 212 å•è¯æœç´¢II
+ * 212 µ¥´ÊËÑË÷II
  * @param board
  * @param words
  * @return
@@ -1024,11 +1448,10 @@ int search4(vector<int> &nums, int target) {
 vector<string> findWords(vector<vector<char>> &board, vector<string> &words) {
     set<string> result;
     int p[4][2] = {
-            {0,  1},
-            {1,  0},
-            {0,  -1},
-            {-1, 0}
-    };
+            {0, 1},
+            {1, 0},
+            {0, -1},
+            {-1, 0}};
     for (int i = 0; i < board.size(); ++i) {
         for (int j = 0; j < board[i].size(); ++j) {
             for (int k = 0; k < words.size(); ++k) {
@@ -1068,7 +1491,7 @@ bool findWordsHelp(vector<vector<char>> &board, int i, int j, string word, int i
 /**
  *
  * 2,2,2,1,4,3,3,9,6,7,19
- * 1122.æ•°ç»„çš„ç›¸å¯¹æ’åº
+ * 1122.Êı×éµÄÏà¶ÔÅÅĞò
  * @param arr1
  * @param arr2
  * @return
@@ -1105,7 +1528,7 @@ vector<int> relativeSortArray(vector<int> &arr1, vector<int> &arr2) {
 }
 
 /**
- * 190. é¢ å€’äºŒè¿›åˆ¶ä½
+ * 190. µßµ¹¶ş½øÖÆÎ»
  */
 uint32_t reverseBits(uint32_t n) {
     uint32_t reverse = 0;
@@ -1117,7 +1540,7 @@ uint32_t reverseBits(uint32_t n) {
 }
 
 /**
- * 231. 2çš„å¹‚
+ * 231. 2µÄÃİ
  * @param n
  * @return
  */
@@ -1126,7 +1549,7 @@ bool isPowerOfTwo(int n) {
 }
 
 /**
- * 191. ä½1 ä¸ªæ•°
+ * 191. Î»1 ¸öÊı
  * @param n
  * @return
  */
@@ -1140,7 +1563,7 @@ int hammingWeight(uint32_t n) {
 }
 
 /**
- * 312.æˆ³æ°”çƒ todo
+ * 312.´ÁÆøÇò todo
  * @param nums
  * @return
  */
@@ -1151,7 +1574,7 @@ int maxCoins(vector<int> &nums) {
 
 
 bool isEnd(unordered_set<string> &s1, unordered_set<string> &s2) {
-    for (string s:s1) {
+    for (string s : s1) {
         if (s2.count(s) != 0) {
             return true;
         }
@@ -1160,7 +1583,7 @@ bool isEnd(unordered_set<string> &s1, unordered_set<string> &s2) {
 }
 
 /**
- * 22.ç”Ÿæˆæ‹¬å·
+ * 22.Éú³ÉÀ¨ºÅ
  * @param n
  * @return
  */
@@ -1189,7 +1612,7 @@ void generateParenthesisHelp(int n, vector<string> &result, string &item, int le
 
 
 /**
- * çˆ¬æ¥¼æ¢¯
+ * ÅÀÂ¥Ìİ
  * f(n)=f(n-1)+f(n-2);
  * @param n
  * @return
@@ -1205,7 +1628,7 @@ int climbStairs4(int n) {
 }
 
 /**
- * ä½¿ç”¨æ•°ç»„
+ * Ê¹ÓÃÊı×é
  * @param board
  * @return
  */
@@ -1215,7 +1638,7 @@ bool isValidSudoku3(vector<vector<char>> &board) {
         int lie[9]{0};
         int zh[9]{0};
         for (int j = 0; j < 9; ++j) {
-            //æ¨ª
+            //ºá
             if (board[i][j] != '.') {
                 if (hen[board[i][j] - '1'] != 0) {
                     return false;
@@ -1223,7 +1646,7 @@ bool isValidSudoku3(vector<vector<char>> &board) {
                     hen[board[i][j] - '1']++;
                 }
             }
-            //ç«–
+            //Êú
             if (board[j][i] != '.') {
                 if (lie[board[j][i] - '1'] != 0) {
                     return false;
@@ -1231,7 +1654,7 @@ bool isValidSudoku3(vector<vector<char>> &board) {
                     lie[board[j][i] - '1']++;
                 }
             }
-            //æ­£æ–¹å½¢
+            //Õı·½ĞÎ
             int tempI = (i / 3) * 3 + j / 3;
             int tempJ = (i % 3) * 3 + j % 3;
             if (board[tempI][tempJ] != '.') {
@@ -1247,7 +1670,7 @@ bool isValidSudoku3(vector<vector<char>> &board) {
 }
 
 /**
- * æœ‰æ•ˆçš„æ•°ç‹¬
+ * ÓĞĞ§µÄÊı¶À
  * @param board
  * @return
  */
@@ -1260,7 +1683,7 @@ bool isValidSudoku2(vector<vector<char>> &board) {
         lie.clear();
         zh.clear();
         for (int j = 0; j < 9; ++j) {
-            //æ¨ª
+            //ºá
             if (board[i][j] != '.') {
                 if (hen.count(board[i][j]) != 0) {
                     return false;
@@ -1268,7 +1691,7 @@ bool isValidSudoku2(vector<vector<char>> &board) {
                     hen.insert(board[i][j]);
                 }
             }
-            //ç«–
+            //Êú
             if (board[j][i] != '.') {
                 if (lie.count(board[j][i]) != 0) {
                     return false;
@@ -1276,7 +1699,7 @@ bool isValidSudoku2(vector<vector<char>> &board) {
                     lie.insert(board[j][i]);
                 }
             }
-            //æ­£æ–¹å½¢
+            //Õı·½ĞÎ
             int tempI = (i / 3) * 3 + j / 3;
             int tempJ = (i % 3) * 3 + j % 3;
             if (board[tempI][tempJ] != '.') {
@@ -1292,8 +1715,8 @@ bool isValidSudoku2(vector<vector<char>> &board) {
 }
 
 /**
- * 130. è¢«å›´ç»•çš„åŒºåŸŸ
- * ä½¿ç”¨æ·±åº¦éå†ï¼Œéå†å››å‘¨çš„Oï¼Œæ”¹ä¸ºQ,ç„¶åå°†å‰©ä½™çš„Oæ”¹ä¸ºXï¼Œæœ€åå°†Qæ”¹ä¸ºO æ—¶é—´å¤æ‚åº¦n^2
+ * 130. ±»Î§ÈÆµÄÇøÓò
+ * Ê¹ÓÃÉî¶È±éÀú£¬±éÀúËÄÖÜµÄO£¬¸ÄÎªQ,È»ºó½«Ê£ÓàµÄO¸ÄÎªX£¬×îºó½«Q¸ÄÎªO Ê±¼ä¸´ÔÓ¶Èn^2
  * @param board
  */
 void solve(vector<vector<char>> &board) {
@@ -1306,12 +1729,11 @@ void solve(vector<vector<char>> &board) {
         return;
     }
     int dis[4][2] = {
-            {0,  1},
-            {1,  0},
-            {0,  -1},
-            {-1, 0}
-    };
-    //å°†å››å‘¨çš„å˜æˆQ
+            {0, 1},
+            {1, 0},
+            {0, -1},
+            {-1, 0}};
+    //½«ËÄÖÜµÄ±ä³ÉQ
     for (int i = 0; i < n; ++i) {
         if (board[i][0] == 'O') {
             vistedSolve(board, dis, 'O', 'Q', i, 0);
@@ -1328,7 +1750,7 @@ void solve(vector<vector<char>> &board) {
             vistedSolve(board, dis, 'O', 'Q', n - 1, i);
         }
     }
-    // å°†ä¸­é—´çš„Oæ”¹æˆX
+    // ½«ÖĞ¼äµÄO¸Ä³ÉX
     for (int i = 1; i < n - 1; ++i) {
         for (int j = 1; j < m - 1; ++j) {
             if (board[i][j] == 'O') {
@@ -1337,7 +1759,7 @@ void solve(vector<vector<char>> &board) {
         }
     }
 
-    //å°†Qå˜å›O
+    //½«Q±ä»ØO
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             if (board[i][j] == 'Q') {
@@ -1350,9 +1772,9 @@ void solve(vector<vector<char>> &board) {
 /**
  *
  * @param board
- * @param p æ–¹å‘
- * @param vistedchar è¦æ‹œè®¿çš„å­—ç¬¦
- * @param changechar æ”¹æˆçš„å­—ç¬¦
+ * @param p ·½Ïò
+ * @param vistedchar Òª°İ·ÃµÄ×Ö·û
+ * @param changechar ¸Ä³ÉµÄ×Ö·û
  * @param i
  * @param j
  */
@@ -1371,7 +1793,7 @@ void vistedSolve(vector<vector<char>> &board, int p[4][2], char vistedchar, char
 }
 
 /**
- * æ·±æœ
+ * ÉîËÑ
  * @param M
  * @return
  */
@@ -1400,8 +1822,8 @@ void visted(vector<vector<int>> &M, int i) {
 }
 
 /**
- * 547.æœ‹å‹åœˆ
- * å¹¶æŸ¥é›†çš„æ–¹å¼
+ * 547.ÅóÓÑÈ¦
+ * ²¢²é¼¯µÄ·½Ê½
  * @param M
  * @return
  */
@@ -1432,7 +1854,7 @@ int findCircleNum(vector<vector<int>> &M) {
 }
 
 /**
- * æ‰¾çˆ¸çˆ¸
+ * ÕÒ°Ö°Ö
  * @param p
  * @param length
  * @param index
@@ -1454,7 +1876,7 @@ void unionParent(int *p, int indexA, int indexB) {
 }
 
 /**
- * 76.æœ€å°è¦†ç›–å­ä¸²
+ * 76.×îĞ¡¸²¸Ç×Ó´®
  * @param s
  * @param t
  * @return
@@ -1463,7 +1885,7 @@ string minWindow(string s, string t) {
     if (t == "" || s == "") {
         return "";
     }
-    //æ±‰æ˜è·ç¦»
+    //ººÃ÷¾àÀë
     int distance = t.size();
     unordered_map<char, int> sMap, tMap;
     for (int i = 0; i < t.size(); ++i) {
@@ -1479,10 +1901,10 @@ string minWindow(string s, string t) {
     while (right < s.size()) {
         if (tMap.count(s[right]) != 0) {
             sMap[s[right]]++;
-            //å¦‚æœæœ‰ä¸”æ²¡æœ‰è¶…è¿‡æ±‰æ˜è·ç¦»-1
+            //Èç¹ûÓĞÇÒÃ»ÓĞ³¬¹ıººÃ÷¾àÀë-1
             if (sMap[s[right]] <= tMap[s[right]]) {
                 distance--;
-                //æ²¡æœ‰äº†æ±‰æ˜è·ç¦»
+                //Ã»ÓĞÁËººÃ÷¾àÀë
                 while (distance == 0) {
                     if (min > (right - left + 1)) {
                         min = right - left + 1;
@@ -1490,19 +1912,19 @@ string minWindow(string s, string t) {
                     }
                     if (tMap.count(s[left]) != 0) {
                         sMap[s[left]]--;
-                        //å¦‚æœçª—å£çš„å­—ç¬¦ä¸æ»¡è¶³éœ€è¦çš„æ±‰æ˜è·ç¦»+1
+                        //Èç¹û´°¿ÚµÄ×Ö·û²»Âú×ãĞèÒªµÄººÃ÷¾àÀë+1
                         if (sMap[s[left]] < tMap[s[left]]) {
                             distance++;
                         }
                     }
-                    //æŒ‡å‘ä¸‹ä¸€ä¸ª
+                    //Ö¸ÏòÏÂÒ»¸ö
                     left++;
                 }
             }
         }
         right++;
     }
-    //è¯´æ˜æ²¡æœ‰åŒ¹é…ä¸Š
+    //ËµÃ÷Ã»ÓĞÆ¥ÅäÉÏ
     if (min == s.size() + 1) {
         return "";
     }
@@ -1510,7 +1932,7 @@ string minWindow(string s, string t) {
 }
 
 /**
- * 552.å­¦ç”Ÿå‡ºå‹¤è®°å½•II
+ * 552.Ñ§Éú³öÇÚ¼ÇÂ¼II
  * @param n
  * @return
  */
@@ -1546,10 +1968,10 @@ int checkRecord(int n) {
 
 
 /**
- * 551.å­¦ç”Ÿå‡ºå‹¤è®°å½•I
- * 'A' : Absentï¼Œç¼ºå‹¤
- * 'L' : Lateï¼Œè¿Ÿåˆ°
- * 'P' : Presentï¼Œåˆ°åœº
+ * 551.Ñ§Éú³öÇÚ¼ÇÂ¼I
+ * 'A' : Absent£¬È±ÇÚ
+ * 'L' : Late£¬³Ùµ½
+ * 'P' : Present£¬µ½³¡
  * @param s
  * @return
  */
@@ -1576,15 +1998,15 @@ bool checkRecord(string s) {
 }
 
 /**
- * é¦–å…ˆèƒ½ç¡®å®šæœ€å¤§å€¼çš„å–å€¼èŒƒå›´ åœ¨[max(nums),sum[nums]] èŒƒå›´
- * å¦‚æœæˆ‘åœ¨è¿™ä¸ªé‡Œé¢å–ä¸€ä¸ªå€¼ lï¼Œç„¶åè®©æ¯ä¸€ä¸ªå­æ®µä¸èƒ½å¤§äºè¿™ä¸ªå€¼ï¼Œçœ‹çœ‹èƒ½åˆ†æˆkï¼Œå¦‚æœk>m ,è¯´æ˜lå–å°äº†ï¼Œå¦‚æœk<mè¯´æ˜å–å¤§äº†ï¼Œk=m æœ‰å¯èƒ½å–å¤§äº†ã€‚ çŸ¥é“æ‰€æœ‰æ•°è¯•ä¸€é
- * è¿™é‡Œå¯ä»¥ä½¿ç”¨äºŒåˆ†æŸ¥æ‰¾æ¥åŠ é€Ÿæœç´¢ã€‚
+ * Ê×ÏÈÄÜÈ·¶¨×î´óÖµµÄÈ¡Öµ·¶Î§ ÔÚ[max(nums),sum[nums]] ·¶Î§
+ * Èç¹ûÎÒÔÚÕâ¸öÀïÃæÈ¡Ò»¸öÖµ l£¬È»ºóÈÃÃ¿Ò»¸ö×Ó¶Î²»ÄÜ´óÓÚÕâ¸öÖµ£¬¿´¿´ÄÜ·Ö³Ék£¬Èç¹ûk>m ,ËµÃ÷lÈ¡Ğ¡ÁË£¬Èç¹ûk<mËµÃ÷È¡´óÁË£¬k=m ÓĞ¿ÉÄÜÈ¡´óÁË¡£ ÖªµÀËùÓĞÊıÊÔÒ»±é
+ * ÕâÀï¿ÉÒÔÊ¹ÓÃ¶ş·Ö²éÕÒÀ´¼ÓËÙËÑË÷¡£
  * @param nums
  * @param m
  * @return
  */
 int splitArray3(vector<int> &nums, int m) {
-    //æ•°ç»„ä¸­æœ€å¤§çš„å€¼ï¼Œæ•°ç»„ä¹‹å’Œ
+    //Êı×éÖĞ×î´óµÄÖµ£¬Êı×éÖ®ºÍ
     int left = nums[0], right = 0;
     for (int i = 0; i < nums.size(); ++i) {
         if (left < nums[i]) {
@@ -1592,10 +2014,10 @@ int splitArray3(vector<int> &nums, int m) {
         }
         right += nums[i];
     }
-    //åˆå§‹åŒ–æœ€å°å€¼
+    //³õÊ¼»¯×îĞ¡Öµ
     int min = right;
     while (left <= right) {
-        //å–ä¸­é—´çš„å€¼
+        //È¡ÖĞ¼äµÄÖµ
         int mid = (left + right) / 2;
         int validNum = validIsOK(nums, m, mid);
         if (validNum == 1) {
@@ -1613,17 +2035,17 @@ int splitArray3(vector<int> &nums, int m) {
 /**
  *
  * @param nums
- * @param m è¦åˆ†æˆåˆ†æˆå¤šå°‘æ®µ
- * @param n æ¯ä¸€æ®µçš„æœ€å¤§å€¼
- * @return -1 ä»£è¡¨nå–å°äº†ï¼Œ0 æœ‰å¯èƒ½åˆé€‚ï¼Œ1 nå–å¤§äº†
+ * @param m Òª·Ö³É·Ö³É¶àÉÙ¶Î
+ * @param n Ã¿Ò»¶ÎµÄ×î´óÖµ
+ * @return -1 ´ú±ínÈ¡Ğ¡ÁË£¬0 ÓĞ¿ÉÄÜºÏÊÊ£¬1 nÈ¡´óÁË
  */
 int validIsOK(vector<int> &nums, int m, int n) {
-    //åˆ†äº†å¤šå°‘æ®µ
+    //·ÖÁË¶àÉÙ¶Î
     int count = 1;
     int temp = 0;
     for (int i = 0; i < nums.size(); ++i) {
         temp += nums[i];
-        //è¶…äº†
+        //³¬ÁË
         if (temp > n) {
             temp = nums[i];
             count++;
@@ -1651,13 +2073,12 @@ int splitArray2(vector<int> &nums, int m) {
         }
     }
     return (int) f[n][m];
-
 }
 
 /**
  *
- * åˆ†å‰²æ•°ç»„çš„æœ€å¤§å€¼
- * ä½¿ç”¨åŠ¨æ€è§„åˆ’
+ * ·Ö¸îÊı×éµÄ×î´óÖµ
+ * Ê¹ÓÃ¶¯Ì¬¹æ»®
  * @param nums
  * @param m
  * @return
@@ -1666,29 +2087,29 @@ int splitArray(vector<int> &nums, int m) {
     if (nums.size() == 0 && m == 0) {
         return 0;
     }
-    // 0ä»£è¡¨å¶æ•°ï¼Œ1ä»£è¡¨å¥‡æ•°,2 ä»£è¡¨0-iæ‰€æœ‰æ•°ä¹‹å’Œ
+    // 0´ú±íÅ¼Êı£¬1´ú±íÆæÊı,2 ´ú±í0-iËùÓĞÊıÖ®ºÍ
     int **p = new int *[3];
     for (int i = 0; i < 3; ++i) {
         p[i] = new int[nums.size()];
     }
     p[1][0] = nums[0];
-    //æ–¹ä¾¿è®¡ç®—ä»»æ„ä¸€æ®µçš„æ•°å€¼
+    //·½±ã¼ÆËãÈÎÒâÒ»¶ÎµÄÊıÖµ
     p[2][0] = nums[0];
     p[0][0] = INT32_MAX;
-    //åˆå§‹åŒ– ä¹Ÿä»£è¡¨åˆ†æˆ1æ®µçš„æƒ…å†µ æ®µçš„æœ€å¤§å€¼ä¸­çš„æœ€å°å€¼
+    //³õÊ¼»¯ Ò²´ú±í·Ö³É1¶ÎµÄÇé¿ö ¶ÎµÄ×î´óÖµÖĞµÄ×îĞ¡Öµ
     for (int i = 1; i < nums.size(); ++i) {
         p[1][i] = nums[i] + p[1][i - 1];
         p[2][i] = nums[i] + p[2][i - 1];
         p[0][i] = INT32_MAX;
     }
-    //m:ä»£è¡¨åˆ†æˆmæ®µ
+    //m:´ú±í·Ö³Ém¶Î
     for (int i = 2; i <= m; ++i) {
-        //æœ€å¤§åæ ‡ä¸º;
+        //×î´ó×ø±êÎª;
         for (int n = i - 1; n < nums.size(); ++n) {
-            // çœ‹æˆ å‰jä¸ªæ•°åˆ†æˆi-1æ®µ æœ€åä¸€æ®µçš„å–å€¼ä¸ºj+1,nums.size();
+            // ¿´³É Ç°j¸öÊı·Ö³Éi-1¶Î ×îºóÒ»¶ÎµÄÈ¡ÖµÎªj+1,nums.size();
             for (int j = i - 2; j < n; ++j) {
-                //è¿™ä¸ªçŠ¶æ€ ç¬¬ä¸€ä¸ªæ•° = ä¹‹å‰çš„çŠ¶çŠ¶æ€å€¼ï¼ˆè‚¯å®šå¤§äºç°åœ¨çš„çŠ¶æ€ å› ä¸ºç›¸åŒçš„æ•°ï¼Œåˆ†çš„ä»½æ•°å˜å¤šï¼Œæ‰€ä»¥åˆ†çš„ä»½æ•°å¤§çš„æœ€å¤§å€¼ä¸€å®šå°äºç­‰äºåˆ†çš„ä»½æ•°å°‘çš„æœ€å¤§å€¼),
-                // ä¸Šä¸€ä¸ªçŠ¶æ€ åˆ†æˆi-1 æ®µä¸­åŒ…å«äº†j-1 ä¸ªæ•°ï¼Œæœ€åä¸€æ®µ åŒ…å«äº† nums.size()-jä¸ªæ•°
+                //Õâ¸ö×´Ì¬ µÚÒ»¸öÊı = Ö®Ç°µÄ×´×´Ì¬Öµ£¨¿Ï¶¨´óÓÚÏÖÔÚµÄ×´Ì¬ ÒòÎªÏàÍ¬µÄÊı£¬·ÖµÄ·İÊı±ä¶à£¬ËùÒÔ·ÖµÄ·İÊı´óµÄ×î´óÖµÒ»¶¨Ğ¡ÓÚµÈÓÚ·ÖµÄ·İÊıÉÙµÄ×î´óÖµ),
+                // ÉÏÒ»¸ö×´Ì¬ ·Ö³Éi-1 ¶ÎÖĞ°üº¬ÁËj-1 ¸öÊı£¬×îºóÒ»¶Î °üº¬ÁË nums.size()-j¸öÊı
                 p[i % 2][n] = min(p[i % 2][n], max(p[(i - 1) % 2][j], p[2][n] - p[2][j]));
             }
         }
@@ -1708,29 +2129,29 @@ int maxNums(int *p, int m) {
 }
 
 /**
- * é‡‡ç”¨è®°å¿†é›†çš„æ–¹å¼
+ * ²ÉÓÃ¼ÇÒä¼¯µÄ·½Ê½
  * vector<int> *p=new vector<int>[size]
- * p[i] è®°å½•è·³åˆ°iå¯ä»¥è·³çš„æ­¥æ•°
+ * p[i] ¼ÇÂ¼Ìøµ½i¿ÉÒÔÌøµÄ²½Êı
  * @param stones
  * @return
  */
 bool canCross2(vector<int> &stones) {
     auto p = new unordered_set<int>[stones.size()];
-    //æ–¹ä¾¿å¿«é€Ÿå®šä½åæ ‡
+    //·½±ã¿ìËÙ¶¨Î»×ø±ê
     unordered_map<int, int> stones_map;
     for (int j = 0; j < stones.size(); ++j) {
         stones_map[stones[j]] = j;
     }
     p[0].insert(1);
     for (int i = 0; i < stones.size(); ++i) {
-        for (int x:p[i]) {
-            //è·³åˆ°ç¬¬å‡ ä¸ªå•å…ƒ
+        for (int x : p[i]) {
+            //Ìøµ½µÚ¼¸¸öµ¥Ôª
             int next = stones[i] + x;
             if (next == stones[stones.size() - 1]) {
                 return true;
             }
             if (stones_map.count(next) > 0) {
-                //æ‰¾åˆ°äº†
+                //ÕÒµ½ÁË
                 int nextIndex = stones_map[next];
                 if (x - 1 > 0) {
                     p[nextIndex].insert(x - 1);
@@ -1744,8 +2165,8 @@ bool canCross2(vector<int> &stones) {
 }
 
 /**
- * 403 é’è›™è¿‡æ²³
- * p[i][j]=k ç¬¬iä¸ªçŸ³å­ç¬¬jç§è·³å‘
+ * 403 ÇàÍÜ¹ıºÓ
+ * p[i][j]=k µÚi¸öÊ¯×ÓµÚjÖÖÌø·¢
  * [0,1,3,5,6,8,12,17]
  * @param stones
  * @return
@@ -1755,38 +2176,38 @@ bool canCross(vector<int> &stones) {
 }
 
 /**
- * åœ¨ ç¬¬indexä½ç½®è·³kæ­¥
+ * ÔÚ µÚindexÎ»ÖÃÌøk²½
  * @param stones
- * @param index åœ¨é‚£ä¸ªåæ ‡
- * @param k è¦è·³å¤šå°‘æ­¥
+ * @param index ÔÚÄÇ¸ö×ø±ê
+ * @param k ÒªÌø¶àÉÙ²½
  * @return
  */
 bool canCrossHelp(vector<int> &stones, int index, int k) {
     if (k <= 0) {
         return false;
     }
-    // è·³åˆ°ä¸‹ä¸€ä¸ªæ•°å­—
+    // Ìøµ½ÏÂÒ»¸öÊı×Ö
     int next = stones[index] + k;
     if (next == stones[stones.size() - 1]) {
-        //è·³åˆ°äº†ç»ˆç‚¹
+        //Ìøµ½ÁËÖÕµã
         return true;
     } else if (next > stones[stones.size() - 1]) {
-        //è·³è¿‡äº†
+        //Ìø¹ıÁË
         return false;
     }
-    //æœ€å·¦è¾¹
+    //×î×ó±ß
     int left = index + 1;
     int right = stones.size() - 1;
     int mid;
     bool flag = false;
-    //äºŒåˆ†æŸ¥æ‰¾
+    //¶ş·Ö²éÕÒ
     while (left <= right) {
         mid = (left + right) / 2;
         if (stones[mid] == next) {
-            //æ‰¾åˆ°äº†
+            //ÕÒµ½ÁË
             flag = canCrossHelp(stones, mid, k - 1) || canCrossHelp(stones, mid, k) ||
                    canCrossHelp(stones, mid, k + 1);
-            //æœ‰çœŸçš„
+            //ÓĞÕæµÄ
             if (flag) {
                 return flag;
             } else {
@@ -1798,19 +2219,19 @@ bool canCrossHelp(vector<int> &stones, int index, int k) {
             left = mid + 1;
         }
     }
-    //æ²¡æœ‰çœŸçš„
+    //Ã»ÓĞÕæµÄ
     return false;
 }
 
 
 /**
- * æ€æƒ³ä¸å˜åªä¸è¿‡ä½¿ç”¨äºŒç»´æ•°ç»„æœ‰ç‚¹æµªè´¹ï¼Œå¯ä»¥ä¼˜åŒ–æˆä¸€ç»´æ•°ç»„
- * è¿™æ˜¯ä¸€ä½æˆ‘ä»¬åªèƒ½ç”¨åˆ°ç›¸é‚»çš„æ•°æ®ï¼Œä¸ä¼šç”¨åˆ°å…¶ä»–ä½ç½®çš„æ•°æ®
+ * Ë¼Ïë²»±äÖ»²»¹ıÊ¹ÓÃ¶şÎ¬Êı×éÓĞµãÀË·Ñ£¬¿ÉÒÔÓÅ»¯³ÉÒ»Î¬Êı×é
+ * ÕâÊÇÒ»Î»ÎÒÃÇÖ»ÄÜÓÃµ½ÏàÁÚµÄÊı¾İ£¬²»»áÓÃµ½ÆäËûÎ»ÖÃµÄÊı¾İ
  * x x
  * x o ->
  *
  * xt xt-1 -> xt 0t
- * è¦æŠŠxt-1 ä¿å­˜åœ¨ x0ä¸­
+ * Òª°Ñxt-1 ±£´æÔÚ x0ÖĞ
  * @param word1
  * @param word2
  * @return
@@ -1821,12 +2242,12 @@ int minDistance2(string word1, string word2) {
     }
     int len2 = word2.size();
     int *p = new int[len2 + 1];
-    //åˆå§‹åŒ–
+    //³õÊ¼»¯
     for (int i = 0; i < len2 + 1; ++i) {
         p[i] = i;
     }
     for (int i = 0; i < word1.size(); ++i) {
-        //å­˜æ”¾ä¸Šä¸€ä¸ªçŠ¶æ€
+        //´æ·ÅÉÏÒ»¸ö×´Ì¬
         p[0] = i;
         for (int j = 1; j < len2 + 1; ++j) {
             int min = p[0];
@@ -1847,16 +2268,16 @@ int minDistance2(string word1, string word2) {
 }
 
 /**
- * 72.ç¼–è¾‘è·ç¦»
- * ç”±ä»–äººåˆ†æå¯å¾—
- * æ“ä½œå¯ä»¥æœ‰
- * word1 æ’å…¥ä¸€ä¸ªå­—ç¬¦
- * word2 æ’å…¥ä¸€ä¸ªå­—ç¬¦
- * word1 æ›¿æ¢ä¸€ä¸ªå­—ç¬¦
+ * 72.±à¼­¾àÀë
+ * ÓÉËûÈË·ÖÎö¿ÉµÃ
+ * ²Ù×÷¿ÉÒÔÓĞ
+ * word1 ²åÈëÒ»¸ö×Ö·û
+ * word2 ²åÈëÒ»¸ö×Ö·û
+ * word1 Ìæ»»Ò»¸ö×Ö·û
  * p[word1.size+1][word2.size+1]={0};
- * æœ€åä¸€ä¸ªå­—æ¯ç›¸åŒ
+ * ×îºóÒ»¸ö×ÖÄ¸ÏàÍ¬
  *  p[i][j]=min(p[i-1][j]+1,p[i][j-1]+1,p[i-1][j-1])
- * æœ€åä¸€ä¸ªå­—æ¯ä¸åŒ
+ * ×îºóÒ»¸ö×ÖÄ¸²»Í¬
  *  p[i][j]=min(p[i-1][j]+1,p[i][j-1]+1,p[i-1][j-1]+1)=1+min(p[i-1][j],p[i][j-1],p[ji-1][j-1]);
  *
  *
@@ -1872,14 +2293,14 @@ int minDistance(string word1, string word2) {
     for (int i = 0; i <= len1; ++i) {
         p[i] = new int[len2 + 1];
     }
-    //åˆå§‹åŒ–
+    //³õÊ¼»¯
     for (int j = 0; j <= len1; ++j) {
         p[j][0] = j;
     }
     for (int j = 1; j <= len2; ++j) {
         p[0][j] = j;
     }
-    //è¿›è¡Œdp
+    //½øĞĞdp
     for (int i = 1; i <= len1; ++i) {
         for (int j = 1; j <= len2; ++j) {
             if (word1[i - 1] == word2[j - 1]) {
@@ -1906,12 +2327,12 @@ int minDistance(string word1, string word2) {
 }
 
 /**
- * è®¡æ•°å·¦å³æ‹¬å·çš„æ•°é‡
- * åªè¦æœ‰å·¦æ‹¬å·ï¼Œæ¥ä¸ªå³æ‹¬å·å°±èƒ½åŒ¹é…
- * å½“ç›¸ç­‰å°±æœ‰å¯èƒ½æ˜¯æœ€å¤§çš„
- * å½“å³æ‹¬å·å¤§äºå·¦æ‹¬å·åˆ™è¯´æ˜ï¼Œæ–°çš„ä¸€è½®å¼€å§‹
+ * ¼ÆÊı×óÓÒÀ¨ºÅµÄÊıÁ¿
+ * Ö»ÒªÓĞ×óÀ¨ºÅ£¬À´¸öÓÒÀ¨ºÅ¾ÍÄÜÆ¥Åä
+ * µ±ÏàµÈ¾ÍÓĞ¿ÉÄÜÊÇ×î´óµÄ
+ * µ±ÓÒÀ¨ºÅ´óÓÚ×óÀ¨ºÅÔòËµÃ÷£¬ĞÂµÄÒ»ÂÖ¿ªÊ¼
  *
- * ä¸ºäº†é˜²æ­¢å·¦æ‹¬å·è¿‡å¤šæ— æ³•å¾—åˆ°ç›¸ç­‰æƒ…å†µï¼Œåç€å†æ¥ä¸€é
+ * ÎªÁË·ÀÖ¹×óÀ¨ºÅ¹ı¶àÎŞ·¨µÃµ½ÏàµÈÇé¿ö£¬·´×ÅÔÙÀ´Ò»±é
  * @param s
  * @return
  */
@@ -1950,9 +2371,9 @@ int longestValidParentheses4(string s) {
 
 
 /**
- * ä½¿ç”¨æ ˆçš„æ€æƒ³
+ * Ê¹ÓÃÕ»µÄË¼Ïë
  *
- * æ‰€æœ‰çš„'('ä½ç½®ï¼Œå¦‚æœé‡åˆ°')'æ ˆé¡¶ä½ç½®å°±æ˜¯ä¸ä¹‹åŒ¹é…çš„'('å­—ç¬¦ï¼Œå°±èƒ½è®¡ç®—å‡ºæœ‰æ•ˆæ‹¬å·çš„é•¿åº¦
+ * ËùÓĞµÄ'('Î»ÖÃ£¬Èç¹ûÓöµ½')'Õ»¶¥Î»ÖÃ¾ÍÊÇÓëÖ®Æ¥ÅäµÄ'('×Ö·û£¬¾ÍÄÜ¼ÆËã³öÓĞĞ§À¨ºÅµÄ³¤¶È
  * @param s
  * @return
  */
@@ -1960,7 +2381,7 @@ int longestValidParentheses4(string s) {
 int longestValidParentheses3(string s) {
     int max = 0;
     stack<int> stack;
-    //å­˜æ”¾åˆå§‹ä½ç½®
+    //´æ·Å³õÊ¼Î»ÖÃ
     stack.push(-1);
     for (int i = 0; i < s.size(); ++i) {
 
@@ -1980,9 +2401,9 @@ int longestValidParentheses3(string s) {
 }
 
 /**
- * æœ€é•¿æœ‰æ•ˆæ‹¬å· åŠ¨æ€è§„åˆ’
- * if p[i]==')' &&p[i-1]=='(' åˆ™ p[i]=p[i-2]+2;
- * if p[i]==')' &&p[i-1]==')' && s[i-p[i-1]-1]=='(' åˆ™ p[i]=p[i-1]+2+p[i-p[i-1]-2]
+ * ×î³¤ÓĞĞ§À¨ºÅ ¶¯Ì¬¹æ»®
+ * if p[i]==')' &&p[i-1]=='(' Ôò p[i]=p[i-2]+2;
+ * if p[i]==')' &&p[i-1]==')' && s[i-p[i-1]-1]=='(' Ôò p[i]=p[i-1]+2+p[i-p[i-1]-2]
  *
  * @param s
  * @return
@@ -1991,7 +2412,7 @@ int longestValidParentheses2(string s) {
     if (s.size() <= 1) {
         return 0;
     }
-    //å­˜æ”¾æœ€å¤§å€¼
+    //´æ·Å×î´óÖµ
     int max = 0;
     int *p = new int[s.size()]{0};
     for (int i = 1; i < s.size(); ++i) {
@@ -2009,7 +2430,7 @@ int longestValidParentheses2(string s) {
 
 
 /**
- * æœ€é•¿æœ‰æ•ˆæ‹¬å·
+ * ×î³¤ÓĞĞ§À¨ºÅ
  * difeite
  * @param s
  * @return
@@ -2023,21 +2444,21 @@ int longestValidParentheses(string s) {
     int rightNum = 0;
     bool *flag = new bool[s.size()]{false};
     for (int i = 0; i < s.size();) {
-        //æ•°å·¦æ‹¬å·
+        //Êı×óÀ¨ºÅ
         for (; s[i] == '(' && i < s.size(); i++) {
             leftNum++;
         }
-        //æ•°å³æ‹¬å·
+        //ÊıÓÒÀ¨ºÅ
         for (; s[i] == ')' && i < s.size(); i++) {
             rightNum++;
         }
         if (leftNum >= rightNum) {
-            //å·¦æ‹¬å·å¤§äºå³æ‹¬å·
+            //×óÀ¨ºÅ´óÓÚÓÒÀ¨ºÅ
             for (int j = i - rightNum * 2; j < i; ++j) {
                 flag[j] = true;
             }
         } else {
-            //å·¦æ‹¬å·å°äºå³æ‹¬å·
+            //×óÀ¨ºÅĞ¡ÓÚÓÒÀ¨ºÅ
             for (int j = i - rightNum - leftNum; j < i - (rightNum - leftNum); ++j) {
                 flag[j] = true;
             }
@@ -2045,7 +2466,7 @@ int longestValidParentheses(string s) {
         leftNum = rightNum = 0;
     }
     int temp = 0;
-    //æ•°æœ€é•¿çš„true
+    //Êı×î³¤µÄtrue
     for (int k = 0; k < s.size(); ++k) {
         cout << flag[k] << '\t';
         if (flag[k]) {
@@ -2064,8 +2485,8 @@ int longestValidParentheses(string s) {
 }
 
 /**
- * Manacher ç®—æ³•
- * è®°å½•çŠ¶æ€
+ * Manacher Ëã·¨
+ * ¼ÇÂ¼×´Ì¬
  * @param s
  * @return
  */
@@ -2075,42 +2496,42 @@ int countSubstrings5(string s) {
         dealS = dealS + s[j] + "#";
     }
     dealS = dealS + "!";
-    //è®°å½•æœ‰å¤šå°‘ä¸ªå­—ä¸²
+    //¼ÇÂ¼ÓĞ¶àÉÙ¸ö×Ö´®
     int count = 0;
-    //è®°å½•æœ€å³è¾¹çš„å›æ–‡åºåˆ—è¾¹ç•Œ
+    //¼ÇÂ¼×îÓÒ±ßµÄ»ØÎÄĞòÁĞ±ß½ç
     int maxRight = 0;
-    //è®°å½•æœ€å³è¾¹çš„å›æ–‡åºåˆ—è¾¹ç•Œä¸­å¿ƒä½ç½®
+    //¼ÇÂ¼×îÓÒ±ßµÄ»ØÎÄĞòÁĞ±ß½çÖĞĞÄÎ»ÖÃ
     int maxRightIndex = 0;
-    //è®°å½•çŠ¶æ€çš„æ•°ç»„
+    //¼ÇÂ¼×´Ì¬µÄÊı×é
     int *f = new int[dealS.size()]{0};
     for (int i = 1; i < dealS.size() - 1; ++i) {
         if (i <= maxRight) {
-            // iå…³äºmaxRightIndex å¯¹ç§°åæ ‡
+            // i¹ØÓÚmaxRightIndex ¶Ô³Æ×ø±ê
             int j = maxRightIndex * 2 - i;
-            //ä¸æœ€å³ç«¯çš„æœ€å¤§è·ç¦»
+            //Óë×îÓÒ¶ËµÄ×î´ó¾àÀë
             int dx = maxRight - i + 1;
-            //ä¸èƒ½è¶…è¿‡æœ€å³ç«¯
+            //²»ÄÜ³¬¹ı×îÓÒ¶Ë
             f[i] = j > dx ? dx : j;
         } else {
             f[i] = 1;
         }
-        //ä¸­å¿ƒæ‰©å±•
+        //ÖĞĞÄÀ©Õ¹
         while (dealS[i - f[i]] == dealS[i + f[i]]) {
             f[i]++;
         }
-        // æ›´æ–°æ•°æ®
+        // ¸üĞÂÊı¾İ
         if (i + f[i] - 1 > maxRight) {
             maxRightIndex = i;
             maxRight = f[i] + i - 1;
         }
-        // ç´¯åŠ å­—ä¸²æ•°
+        // ÀÛ¼Ó×Ö´®Êı
         count += (f[i] / 2);
     }
     return count;
 }
 
 /**
- * éå†
+ * ±éÀú
  * @param s
  * @return
  */
@@ -2132,7 +2553,7 @@ int countSubstrings4(string s) {
 }
 
 /**
- * æ ¹æ®é•¿åº¦æ¥è¿›è¡Œdpï¼Œè¿™ä¸ªå¯ä»¥ä¼˜åŒ–å†…å­˜
+ * ¸ù¾İ³¤¶ÈÀ´½øĞĞdp£¬Õâ¸ö¿ÉÒÔÓÅ»¯ÄÚ´æ
  * f(len,index) = true,len=1
  * f(len,index) = s[index]==s[index+1] ,len=2;
  * f(len,index) = s[index]==s[index+len] && f(len-2,index+1) ,len>2
@@ -2173,7 +2594,7 @@ int countSubstrings(string s) {
 }
 
 /**
- * ä¼˜åŒ–å†…å­˜
+ * ÓÅ»¯ÄÚ´æ
  * @param s
  * @return
  */
@@ -2227,12 +2648,12 @@ int countSubstrings3(string s) {
 }
 
 /**
- * è®¾è‡³å°‘æœ‰ä¸€ç§ä»»åŠ¡Aå‡ºç°æ¬¡æ•°æœ€å¤šï¼Œæœ€å¤§å‡ºç°æ¬¡æ•°è®°ä¸ºcnt_max
-    è®¾å‡ºç°æ¬¡æ•°ä¸cnt_maxç›¸ç­‰çš„ä»»åŠ¡æœ‰equal_cnt_maxä¸ª
-    1ã€æœ‰cnt_maxä¸ªAä»»åŠ¡ï¼Œå…±æœ‰ï¼ˆcnt_max-1ï¼‰ä¸ªé—´éš”ï¼Œæ¯ä¸ªé—´éš”é¢˜ç›®è¦æ±‚æ’å…¥nä¸ªä¸åŒçš„ä»»åŠ¡ï¼Œå‡‘ä¸å¤Ÿnä¸ªä¸åŒä»»åŠ¡æˆ‘ä»¬ç”¨â€œå¾…å‘½â€æ¥å¡«å……ã€‚
-    2ã€æœ€åä¸€ä¸ªAåé¢å¯èƒ½è¿˜æœ‰å…¶ä»–ä»»åŠ¡ï¼Œæ­¤æ—¶çš„å…¶ä»–ä»»åŠ¡åªèƒ½æ˜¯å‡ºç°æ¬¡æ•°ç­‰äºcnt_maxçš„ä»»åŠ¡ï¼Œä¸ç„¶å®ƒæ—©å°±å…¨éƒ¨ç”¨æ¥å¡«å……ï¼ˆï¼ˆcnt_max-1ï¼‰ï¼‰ä¸ªé—´éš”äº†(æ¯ä¸ªé—´éš”éœ€å¡«å……ä¸€ä¸ª)
-    3ã€ç‰¹æ®Šæƒ…å†µæ˜¯n=0ï¼Œåˆ™é¢˜ç›®æ±‚å‡ºæ¥çš„ç­”æ¡ˆåº”è¯¥æ˜¯ä»»åŠ¡çš„æ€»æ•°ï¼Œå³ä»£ç ä¸­çš„task.size();
-    4ã€ç­”æ¡ˆè¦åŒ…æ‹¬ä»»åŠ¡Açš„ä¸ªæ•°ï¼Œæ‰€ä»¥ç­”æ¡ˆ ans = max((cnt_max-1)*n + cnt_max + equal_cnt_max,tasks.size())
+ * ÉèÖÁÉÙÓĞÒ»ÖÖÈÎÎñA³öÏÖ´ÎÊı×î¶à£¬×î´ó³öÏÖ´ÎÊı¼ÇÎªcnt_max
+    Éè³öÏÖ´ÎÊıÓëcnt_maxÏàµÈµÄÈÎÎñÓĞequal_cnt_max¸ö
+    1¡¢ÓĞcnt_max¸öAÈÎÎñ£¬¹²ÓĞ£¨cnt_max-1£©¸ö¼ä¸ô£¬Ã¿¸ö¼ä¸ôÌâÄ¿ÒªÇó²åÈën¸ö²»Í¬µÄÈÎÎñ£¬´Õ²»¹»n¸ö²»Í¬ÈÎÎñÎÒÃÇÓÃ¡°´ıÃü¡±À´Ìî³ä¡£
+    2¡¢×îºóÒ»¸öAºóÃæ¿ÉÄÜ»¹ÓĞÆäËûÈÎÎñ£¬´ËÊ±µÄÆäËûÈÎÎñÖ»ÄÜÊÇ³öÏÖ´ÎÊıµÈÓÚcnt_maxµÄÈÎÎñ£¬²»È»ËüÔç¾ÍÈ«²¿ÓÃÀ´Ìî³ä£¨£¨cnt_max-1£©£©¸ö¼ä¸ôÁË(Ã¿¸ö¼ä¸ôĞèÌî³äÒ»¸ö)
+    3¡¢ÌØÊâÇé¿öÊÇn=0£¬ÔòÌâÄ¿Çó³öÀ´µÄ´ğ°¸Ó¦¸ÃÊÇÈÎÎñµÄ×ÜÊı£¬¼´´úÂëÖĞµÄtask.size();
+    4¡¢´ğ°¸Òª°üÀ¨ÈÎÎñAµÄ¸öÊı£¬ËùÒÔ´ğ°¸ ans = max((cnt_max-1)*n + cnt_max + equal_cnt_max,tasks.size())
  * @param tasks
  * @param n
  * @return
@@ -2243,7 +2664,7 @@ int leastInterval2(vector<char> &tasks, int n) {
     for (int i = 0; i < tasks.size(); ++i) {
         p[tasks[i] - 'A']++;
     }
-    //æ’åº
+    //ÅÅĞò
     sort(p, p + 26, [](int &x, int &y) { return x > y; });
     int index = 1;
     while (index < 26 && p[0] == p[index]) {
@@ -2265,7 +2686,7 @@ int leastInterval2(vector<char> &tasks, int n) {
 //}
 
 /**
- * 621.ä»»åŠ¡è°ƒåº¦å™¨
+ * 621.ÈÎÎñµ÷¶ÈÆ÷
  * f(n)=f(n-1)+task(n);
  * @param tasks
  * @param n
@@ -2307,7 +2728,7 @@ int leastInterval(vector<char> &tasks, int n) {
 
 
 /**
- * ä½¿ç”¨åŠ¨æ€è§„åˆ’å»æ‰¾æœ€å¤§çš„æ­£æ–¹å½¢é¢ç§¯
+ * Ê¹ÓÃ¶¯Ì¬¹æ»®È¥ÕÒ×î´óµÄÕı·½ĞÎÃæ»ı
  * @param matrix
  * @return
  */
@@ -2346,7 +2767,6 @@ int maximalSquare_2(vector<vector<char>> &matrix) {
                 p[j] = 0;
             }
         }
-
     }
     return max * max;
 }
@@ -2363,7 +2783,7 @@ int threeMin(int n, int m, int k) {
 }
 
 /**
- * 221.æœ€å¤§çš„æ­£æ–¹å½¢
+ * 221.×î´óµÄÕı·½ĞÎ
  * @param matrix
  * @return
  */
@@ -2397,7 +2817,7 @@ int maximalSquare_todo(vector<vector<char>> &matrix) {
 }
 
 /**
- * 91.è§£ç æ–¹æ³•
+ * 91.½âÂë·½·¨
  * @param s
  * @return
  */
@@ -2432,7 +2852,7 @@ int numDecodingsHelp(string s, int index, int *p) {
 }
 
 /**
- * æ ¹æ®æ–æ³¢é‚£å¥‘æ•°åˆ—æ”¹é€ çš„
+ * ¸ù¾İì³²¨ÄÇÆõÊıÁĞ¸ÄÔìµÄ
  * @param s
  * @return
  */
@@ -2464,7 +2884,7 @@ int numDecodings2(string s) {
 }
 
 /**
- * 33. æœç´¢æ—‹è½¬æ’åºæ•°ç»„
+ * 33. ËÑË÷Ğı×ªÅÅĞòÊı×é
  * @param nums
  * @param target
  * @return
@@ -2476,13 +2896,13 @@ int search_33(vector<int> &nums, int target) {
     if (nums.size() == 1) {
         return nums[0] == target ? 0 : -1;
     }
-//    if(nums)
+    //    if(nums)
     return 0;
 }
 
 /**
- * 363 ç»™å®šä¸€ä¸ªéç©ºäºŒç»´çŸ©é˜µ matrix å’Œä¸€ä¸ªæ•´æ•° kï¼Œæ‰¾åˆ°è¿™ä¸ªçŸ©é˜µå†…éƒ¨ä¸å¤§äº k çš„æœ€å¤§çŸ©å½¢å’Œ
- * å½“å®½åº¦å’Œé«˜åº¦éƒ½ä¸º1
+ * 363 ¸ø¶¨Ò»¸ö·Ç¿Õ¶şÎ¬¾ØÕó matrix ºÍÒ»¸öÕûÊı k£¬ÕÒµ½Õâ¸ö¾ØÕóÄÚ²¿²»´óÓÚ k µÄ×î´ó¾ØĞÎºÍ
+ * µ±¿í¶ÈºÍ¸ß¶È¶¼Îª1
  *
  * f(iStart,jStart,iEnd,jEnd)=f(iStart,jStart,iEnd-1,jEnd-i)+f(iEnd-1,jStart,iEnd,jEnd-1)+f(iStart,jEnd-1,iEnd-1,jEnd)+f(iEnd,jEnd,iEnd,jEnd)
  * @param matrix
@@ -2503,7 +2923,7 @@ int maxSumSubmatrix(vector<vector<int>> &matrix, int k) {
             }
         }
     }
-    //å®½åº¦
+    //¿í¶È
     for (int iLength = 1; iLength <= length; ++iLength) {
         for (int jWeight = 1; jWeight <= weight; ++jWeight) {
             for (int i = 0; i <= length - iLength; ++i) {
@@ -2511,16 +2931,16 @@ int maxSumSubmatrix(vector<vector<int>> &matrix, int k) {
                     int iEnd = i + iLength - 1;
                     int jEnd = j + jWeight - 1;
                     if (i == iEnd && j == jEnd) {
-                        // ä¸€ä¸ªå…ƒç´ 
+                        // Ò»¸öÔªËØ
                         p[i][j][i][j] = matrix[i][j];
                     } else if (i == iEnd) {
-                        //ä¸€è¡Œå…ƒç´ 
+                        //Ò»ĞĞÔªËØ
                         p[i][j][i][jEnd] = p[i][j][i][jEnd - 1] + p[i][jEnd][i][jEnd];
                     } else if (j == jEnd) {
-                        //ä¸€åˆ—å…ƒç´ 
+                        //Ò»ÁĞÔªËØ
                         p[i][j][iEnd][j] = p[i][j][iEnd - 1][j] + p[iEnd][j][iEnd][j];
                     } else {
-                        //å¤šè¡Œå¤šåˆ—
+                        //¶àĞĞ¶àÁĞ
                         p[i][j][iEnd][jEnd] = p[i][j][iEnd - 1][jEnd - 1] + p[iEnd][j][iEnd][jEnd - 1] +
                                               p[i][jEnd][iEnd - 1][jEnd] + p[iEnd][jEnd][iEnd][jEnd];
                     }
@@ -2568,7 +2988,7 @@ int maxSumSubmatrix2(vector<vector<int>> &matrix, int k) {
 }
 
 /**
- * å‡å°‘å†…å­˜
+ * ¼õÉÙÄÚ´æ
  * @param matrix
  * @param k
  * @return
@@ -2599,7 +3019,7 @@ int maxSumSubmatrix3(vector<vector<int>> &matrix, int k) {
 }
 
 /**
- * å›ºå®šå·¦å³è¾¹ç•Œ
+ * ¹Ì¶¨×óÓÒ±ß½ç
  * @param matrix
  * @param k
  * @return
@@ -2614,7 +3034,7 @@ int maxSumSubmatrix4(vector<vector<int>> &matrix, int k) {
             for (int i = 0; i < length; ++i) {
                 p[i] += matrix[i][right];
             }
-            //å–æ•°ç»„çš„ä¸­å’Œæœ€å¤§çš„
+            //È¡Êı×éµÄÖĞºÍ×î´óµÄ
             for (int i = 0; i < length; ++i) {
                 int sum = 0;
                 for (int j = i; j < length; ++j) {
@@ -2631,7 +3051,7 @@ int maxSumSubmatrix4(vector<vector<int>> &matrix, int k) {
 
 
 /**
- * N å‰æ•°çš„å‰åºéå†
+ * N ²æÊıµÄÇ°Ğò±éÀú
  * @param root
  * @return
  */
@@ -2655,7 +3075,7 @@ void preOrderHelp(Node *root, vector<int> &result) {
 }
 
 /**
- * 337.æ‰“å®¶åŠ«èˆIII
+ * 337.´ò¼Ò½ÙÉáIII
  * @param nums
  * @return
  */
@@ -2664,7 +3084,7 @@ int rob3(vector<int> &nums) {
 }
 
 /**
- * 337.æ‰“å®¶åŠ«èˆII
+ * 337.´ò¼Ò½ÙÉáII
  * @param nums
  * @return
  */
@@ -2686,7 +3106,7 @@ int rob2(vector<int> &nums) {
 }
 
 /**
- * 198.æ‰“å®¶åŠ«èˆI
+ * 198.´ò¼Ò½ÙÉáI
  * @param nums
  * @return
  */
@@ -2715,7 +3135,7 @@ int robHelp(vector<int> &nums, int index, int *p) {
 }
 
 /**
- * è´ªå¿ƒ+dfs
+ * Ì°ĞÄ+dfs
  * @param coins
  * @param amount
  * @return
@@ -2729,8 +3149,8 @@ int coinChange2(vector<int> &coins, int amount) {
 }
 
 
-/**
- * 322.é›¶é’±å…‘æ¢
+/**numDecodings
+ * 322.ÁãÇ®¶Ò»»
  * @param coins
  * @param amount
  * @return
@@ -2761,7 +3181,7 @@ int coinChangeHelp(vector<int> &coins, int *temp, int amount) {
 }
 
 /**
- * 64.æœ€çŸ­è·¯å¾„å’Œ
+ * 64.×î¶ÌÂ·¾¶ºÍ
  * @param grid
  * @return
  */
@@ -2774,7 +3194,6 @@ int minPathSum(vector<vector<int>> &grid) {
     temp[0] = grid[0][0];
     for (int i = 1; i < length; ++i) {
         if (i == 0) {
-
         }
         temp[i] = grid[0][i] + temp[i - 1];
     }
@@ -2831,7 +3250,7 @@ string replaceSpace2(string s) {
 }
 
 /**
- * æœ€é•¿å…¬å…±å­åºåˆ—
+ * ×î³¤¹«¹²×ÓĞòÁĞ
  * @param text1
  * @param text2
  * @return
@@ -2843,7 +3262,7 @@ int longestCommonSubsequence(string text1, string text2) {
     for (int i = 0; i < text1Length; ++i) {
         p[i] = new int[text2Length];
         for (int j = 0; j < text2Length; ++j) {
-            //åˆå§‹åŒ–
+            //³õÊ¼»¯
             p[i][j] = 0;
         }
     }
@@ -2861,11 +3280,10 @@ int longestCommonSubsequence(string text1, string text2) {
 
 int robotSim3(vector<int> &commands, vector<vector<int>> &obstacles) {
     int dirct[4][2] = {
-            {0,  1},
-            {1,  0},
-            {0,  -1},
-            {-1, 0}
-    };
+            {0, 1},
+            {1, 0},
+            {0, -1},
+            {-1, 0}};
     int x, y, max, dir;
     x = y = max = dir = 0;
     unordered_map<int, unordered_set<int>> obsSet;
@@ -2946,28 +3364,28 @@ vector<vector<int>> fourSum2(vector<int> &nums, int target) {
 }
 
 /**
- * è·³è·ƒæ¸¸æˆII
+ * ÌøÔ¾ÓÎÏ·II
  * @param nums
  * @return
  */
 int jump2(vector<int> &nums) {
-    //æœ€å¤§å€¼ä¸€ç›´æ›´æ–°
+    //×î´óÖµÒ»Ö±¸üĞÂ
     int max = 0;
-    //å½“èµ°åˆ°ä¸´æ—¶æœ€å¤§å€¼æ—¶ï¼ŒåŠ ä¸€
+    //µ±×ßµ½ÁÙÊ±×î´óÖµÊ±£¬¼ÓÒ»
     int step = 0;
-    //ä¸´æ—¶æœ€å¤§å€¼
+    //ÁÙÊ±×î´óÖµ
     int tempMax = 0;
     int length = nums.size() - 1;
     for (int i = 0; i < nums.size() && max >= i; ++i) {
-        //å½“åŒ…åˆ°æœ€åäº†
+        //µ±°üµ½×îºóÁË
         if (max >= length) {
             return step + 1;
         }
-        //ä¸€ç›´æ›´æ–°maxçš„å€¼
+        //Ò»Ö±¸üĞÂmaxµÄÖµ
         if (i + nums[i] > max) {
             max = i + nums[i];
         }
-        //ä¸Šä¸€ä¸ªé˜¶æ®µèµ°å®Œäº†ï¼Œè®¾ç½®ä¸‹ä¸€ä¸ªé˜¶æ®µ
+        //ÉÏÒ»¸ö½×¶Î×ßÍêÁË£¬ÉèÖÃÏÂÒ»¸ö½×¶Î
         if (tempMax <= i) {
             step++;
             tempMax = max;
@@ -2977,8 +3395,8 @@ int jump2(vector<int> &nums) {
 }
 
 /**
- * è·³è·ƒæ¸¸æˆï¼Œåªè¦èƒ½ç”¨è´ªå¿ƒå°±ç”¨è´ªå¿ƒï¼Œè´ªå¿ƒè™½ç„¶æ˜¯åŠ¨æ€è§„åˆ’çš„å­é›†ï¼Œä½†æ˜¯åŠ¨æ€è§„åˆ’çš„é€Ÿåº¦æ˜¯æ²¡æœ‰åŠæ³•å’Œè´ªå¿ƒä½œæ¯”è¾ƒçš„
- * è¦ç»å¸¸æ›´æ–°max
+ * ÌøÔ¾ÓÎÏ·£¬Ö»ÒªÄÜÓÃÌ°ĞÄ¾ÍÓÃÌ°ĞÄ£¬Ì°ĞÄËäÈ»ÊÇ¶¯Ì¬¹æ»®µÄ×Ó¼¯£¬µ«ÊÇ¶¯Ì¬¹æ»®µÄËÙ¶ÈÊÇÃ»ÓĞ°ì·¨ºÍÌ°ĞÄ×÷±È½ÏµÄ
+ * Òª¾­³£¸üĞÂmax
  * @param nums
  * @return
  */
@@ -2997,7 +3415,7 @@ bool canJump2(vector<int> &nums) {
 }
 
 /**
- * é€šè¿‡çœ‹é¢˜è§£å’Œæˆ‘çš„æ€è·¯ä¸€æ ·ï¼Œå°†ä¹‹å‰çš„ä¸€ä¸ªèŠ‚ç‚¹æ”¹æˆä¸€ä¸ªæ•°ç»„
+ * Í¨¹ı¿´Ìâ½âºÍÎÒµÄË¼Â·Ò»Ñù£¬½«Ö®Ç°µÄÒ»¸ö½Úµã¸Ä³ÉÒ»¸öÊı×é
  * @param beginWord
  * @param endWord
  * @param wordList
@@ -3008,20 +3426,20 @@ vector<vector<string>> findLadders2(string beginWord, string endWord, vector<str
 }
 
 /**
- * å¤ä¹  å•è¯æ¥é¾™
+ * ¸´Ï° µ¥´Ê½ÓÁú
  * @param beginWord
  * @param endWord
  * @param wordList
  * @return
  */
 int ladderLength2(string beginWord, string endWord, vector<string> &wordList) {
-    //å•è¯é›†åˆ
+    //µ¥´Ê¼¯ºÏ
     unordered_set<string> wordSet;
     for (int k = 0; k < wordList.size(); ++k) {
         wordSet.insert(wordList[k]);
     }
     unordered_set<string> visited;
-    //å­˜æ”¾æ¯ä¸€æ­¥çš„å•è¯
+    //´æ·ÅÃ¿Ò»²½µÄµ¥´Ê
     queue<string> que;
     que.push(beginWord);
     visited.insert(beginWord);
@@ -3032,20 +3450,20 @@ int ladderLength2(string beginWord, string endWord, vector<string> &wordList) {
         for (int k = 0; k < length; ++k) {
             string dealStr = que.front();
             que.pop();
-            //æ­¥æ•°
+            //²½Êı
             for (int i = 0; i < dealStr.size(); ++i) {
                 char tempChar = dealStr[i];
                 for (int j = 'a'; j <= 'z'; ++j) {
-                    //æ–°çš„å•è¯
+                    //ĞÂµÄµ¥´Ê
                     dealStr[i] = j;
-                    //åœ¨å•è¯åˆ—è¡¨ä¸­ä½†æ˜¯æ²¡æœ‰ä½¿ç”¨è¿‡
+                    //ÔÚµ¥´ÊÁĞ±íÖĞµ«ÊÇÃ»ÓĞÊ¹ÓÃ¹ı
                     if (wordSet.count(dealStr) && visited.count(dealStr) == 0) {
                         if (dealStr == endWord) {
                             return step + 1;
                         }
-                        //æ”¾åˆ°é˜Ÿåˆ—ä¸­
+                        //·Åµ½¶ÓÁĞÖĞ
                         que.push(dealStr);
-                        //æ ‡è®°å·²ç»è®¿é—®è¿‡äº†
+                        //±ê¼ÇÒÑ¾­·ÃÎÊ¹ıÁË
                         visited.insert(dealStr);
                     }
                 }
@@ -3057,7 +3475,7 @@ int ladderLength2(string beginWord, string endWord, vector<string> &wordList) {
 }
 
 /**
- * å¤šæ•°å…ƒç´ 
+ * ¶àÊıÔªËØ
  * @param nums
  * @return
  */
@@ -3077,7 +3495,7 @@ int majorityElement(vector<int> &nums) {
 }
 
 /**
- * è´ªå¿ƒ
+ * Ì°ĞÄ
  * @param nums
  * @return
  */
@@ -3102,7 +3520,7 @@ int jump(vector<int> &nums) {
 }
 
 /**
- * 45.è·³è·ƒæ¸¸æˆII
+ * 45.ÌøÔ¾ÓÎÏ·II
  * @param nums
  * @return
  */
@@ -3118,11 +3536,11 @@ int jumpDT(vector<int> &nums) {
 }
 
 int jumpHelp(vector<int> &nums, int index, int *minStep) {
-    //æœ€åä¸€è·³
+    //×îºóÒ»Ìø
     if (nums[index] + index >= nums.size() - 1) {
         return 1;
     }
-    //è¿™ä¸€è·³çš„èŒƒå›´
+    //ÕâÒ»ÌøµÄ·¶Î§
     int min = -1;
     for (int i = 1; i <= nums[index]; ++i) {
         int temp = minStep[i + index] != -1 ? minStep[i + index] : jumpHelp(nums, index + i, minStep);
@@ -3135,7 +3553,7 @@ int jumpHelp(vector<int> &nums, int index, int *minStep) {
 }
 
 /**
- * 126 å•è¯æ¥é¾™II
+ * 126 µ¥´Ê½ÓÁúII
  * @param beginWord
  * @param endWord
  * @param wordList
@@ -3175,7 +3593,7 @@ vector<vector<string>> findLadders(string beginWord, string endWord, vector<stri
                 dealStr[j] = tempChar;
             }
         }
-        //è¿™é‡Œå­˜æ”¾ç”¨åˆ°çš„å•è¯
+        //ÕâÀï´æ·ÅÓÃµ½µÄµ¥´Ê
         for (int l = 0; l < tempVisited.size(); ++l) {
             visited.insert(tempVisited[l]);
         }
@@ -3192,7 +3610,7 @@ vector<vector<string>> findLadders(string beginWord, string endWord, vector<stri
 }
 
 /**
- * 153 æœç´¢æ•°ç»„ä¸­çš„æœ€å°å€¼
+ * 153 ËÑË÷Êı×éÖĞµÄ×îĞ¡Öµ
  * @param nums
  * @return
  */
@@ -3215,7 +3633,7 @@ int findMin(vector<int> &nums) {
 }
 
 /**
- * 74 æœç´¢äºŒç»´çŸ©é˜µ
+ * 74 ËÑË÷¶şÎ¬¾ØÕó
  * @param matrix
  * @param target
  * @return
@@ -3260,7 +3678,7 @@ bool searchMatrix(vector<vector<int>> &matrix, int target) {
 }
 
 /**
- * 33 æœç´¢æ—‹è½¬æ•°ç»„
+ * 33 ËÑË÷Ğı×ªÊı×é
  * @param nums
  * @param target
  * @return
@@ -3274,7 +3692,7 @@ int search(vector<int> &nums, int target) {
             return min;
         }
         if (nums[start] < nums[min] && nums[start] <= target && nums[min] > target) {
-            //å‰åŠéƒ¨åˆ†æœ‰åºå¹¶ä¸”åœ¨æœ‰åºä¸­
+            //Ç°°ë²¿·ÖÓĞĞò²¢ÇÒÔÚÓĞĞòÖĞ
             end = min - 1;
             while (start < end) {
                 if (nums[min] < target) {
@@ -3289,7 +3707,7 @@ int search(vector<int> &nums, int target) {
             }
         }
         if (nums[min] < nums[end] && nums[min] < target && nums[end] >= target) {
-            //ååŠéƒ¨åˆ†æœ‰åºå¹¶ä¸”åœ¨æœ‰åºä¸­
+            //ºó°ë²¿·ÖÓĞĞò²¢ÇÒÔÚÓĞĞòÖĞ
             start = min + 1;
             while (start < end) {
                 if (nums[min] < target) {
@@ -3303,7 +3721,7 @@ int search(vector<int> &nums, int target) {
                 }
             }
         }
-        //åœ¨æ— åºçš„éƒ¨åˆ†ä¸­
+        //ÔÚÎŞĞòµÄ²¿·ÖÖĞ
         if (nums[min] > target) {
             start = min + 1;
         } else {
@@ -3314,40 +3732,40 @@ int search(vector<int> &nums, int target) {
 }
 
 /**
- * å®˜ç½‘è§£æ³•
+ * ¹ÙÍø½â·¨
  * @param nums
  * @param target
  * @return
  */
 int searchGW(vector<int> &nums, int target) {
     int n = (int) nums.size();
-    //é•¿åº¦ä¸º0
+    //³¤¶ÈÎª0
     if (!n) {
         return -1;
     }
-    //é•¿åº¦ä¸º1
+    //³¤¶ÈÎª1
     if (n == 1) {
         return nums[0] == target ? 0 : -1;
     }
     int start = 0, end = n - 1;
     while (start <= end) {
-        //å»ä¸­é—´å€¼
+        //È¥ÖĞ¼äÖµ
         int mid = (start + end) / 2;
-        //åˆ¤æ–­ä¸­é—´å€¼
+        //ÅĞ¶ÏÖĞ¼äÖµ
         if (nums[mid] == target) return mid;
-        //å¦‚æœ
+        //Èç¹û
         if (nums[0] <= nums[mid]) {
-            //å·¦è¾¹æœ‰åº
+            //×ó±ßÓĞĞò
             if (nums[0] <= target && target < nums[mid]) {
-                //åœ¨å·¦è¾¹æœ‰åºçš„æ•°ç»„ä¸­
+                //ÔÚ×ó±ßÓĞĞòµÄÊı×éÖĞ
                 end = mid - 1;
             } else {
                 start = mid + 1;
             }
         } else {
-            //å³è¾¹æœ‰åº
+            //ÓÒ±ßÓĞĞò
             if (nums[mid] < target && target <= nums[n - 1]) {
-                //åœ¨å³è¾¹æœ‰åºçš„æ•°ç»„ä¸­
+                //ÔÚÓÒ±ßÓĞĞòµÄÊı×éÖĞ
                 start = mid + 1;
             } else {
                 end = mid - 1;
@@ -3358,7 +3776,7 @@ int searchGW(vector<int> &nums, int target) {
 }
 
 /**
- * 55.è´ªå¿ƒç®—æ³• è·³è·ƒæ¸¸æˆ
+ * 55.Ì°ĞÄËã·¨ ÌøÔ¾ÓÎÏ·
  */
 
 bool canJump(vector<int> &nums) {
@@ -3375,7 +3793,7 @@ bool canJump(vector<int> &nums) {
 }
 
 /**
- * [55]è·³è·ƒæ¸¸æˆ ä½¿ç”¨åŠ¨æ€è§„åˆ’ï¼Œè¶…æ—¶äº†
+ * [55]ÌøÔ¾ÓÎÏ· Ê¹ÓÃ¶¯Ì¬¹æ»®£¬³¬Ê±ÁË
  * @param nums
  * @return
  */
@@ -3398,7 +3816,7 @@ bool canJump(vector<int> &nums, int index) {
 
 vector<vector<char>> updateBoard1(vector<vector<char>> &board, vector<int> &click) {
     char deal = board[click[0]][click[1]];
-    //æŒ–åˆ°é›·äº†
+    //ÍÚµ½À×ÁË
     if (deal == 'M') {
         board[click[0]][click[1]] = 'X';
         return board;
@@ -3418,13 +3836,12 @@ vector<vector<char>> updateBoard1(vector<vector<char>> &board, vector<int> &clic
         } else {
             board[click[0]][click[1]] = ('0' + num);
         }
-
     }
     return board;
 }
 
 /**
- * æ‰«é›·ï¼Œè¿™ä¸ªé€Ÿåº¦æ›´å¿«
+ * É¨À×£¬Õâ¸öËÙ¶È¸ü¿ì
  * @param board
  * @param click
  * @return
@@ -3458,7 +3875,7 @@ void updateBoardDfs(vector<vector<char>> &board, int i, int j) {
 }
 
 /**
- * å¤šå°‘é›·
+ * ¶àÉÙÀ×
  * @param board
  * @param i
  * @param j
@@ -3478,16 +3895,16 @@ int landmineNum(vector<vector<char>> &board, int i, int j) {
 }
 
 /**
- * å•è¯æ¥é¾™ é‡‡ç”¨å›¾çš„æ€æƒ³
+ * µ¥´Ê½ÓÁú ²ÉÓÃÍ¼µÄË¼Ïë
  * @param beginWord
  * @param endWord
  * @param wordList
  * @return
  */
 int ladderLength(string beginWord, string endWord, vector<string> &wordList) {
-    //å­˜æ”¾å•è¯
+    //´æ·Åµ¥´Ê
     unordered_set<string> words;
-    //å­˜æ”¾é—®è¿‡çš„èŠ‚ç‚¹
+    //´æ·ÅÎÊ¹ıµÄ½Úµã
     unordered_set<string> visited;
     for (int i = 0; i < wordList.size(); ++i) {
         words.insert(wordList[i]);
@@ -3496,45 +3913,44 @@ int ladderLength(string beginWord, string endWord, vector<string> &wordList) {
     visited.insert(beginWord);
     queue<string> visiting;
     visiting.push(beginWord);
-    //å¦‚æœé˜Ÿåˆ—ä¸ä¸ºç©º
+    //Èç¹û¶ÓÁĞ²»Îª¿Õ
     while (!visiting.empty()) {
         int length = visiting.size();
         for (int i = 0; i < length; ++i) {
             string dealStr = visiting.front();
             visiting.pop();
-            //æ¯ä¸ªå•è¯çš„é•¿åº¦
+            //Ã¿¸öµ¥´ÊµÄ³¤¶È
             for (int j = 0; j < dealStr.size(); ++j) {
                 char temp = dealStr[j];
-                //æ¯ä¸ªä½ç½®
+                //Ã¿¸öÎ»ÖÃ
                 for (int k = 'a'; k <= 'z'; ++k) {
                     dealStr[j] = k;
-                    //å¦‚æœåœ¨å•è¯åˆ—è¡¨ä¸­æ‰¾åˆ°äº†ï¼Œå¹¶ä¸”æ²¡æœ‰è®¿é—®è¿‡ï¼Œåˆ™è¿›è¡Œå¤„ç†
+                    //Èç¹ûÔÚµ¥´ÊÁĞ±íÖĞÕÒµ½ÁË£¬²¢ÇÒÃ»ÓĞ·ÃÎÊ¹ı£¬Ôò½øĞĞ´¦Àí
                     if (words.count(dealStr) && visited.count(dealStr) == 0) {
-                        //ç­‰äºæœ€åä¸€ä¸ª
+                        //µÈÓÚ×îºóÒ»¸ö
                         if (dealStr == endWord) {
                             return step + 1;
                         }
-                        //æ”¾åˆ°å°†è¦éå†çš„é˜Ÿåˆ—ä¸­
+                        //·Åµ½½«Òª±éÀúµÄ¶ÓÁĞÖĞ
                         visiting.push(dealStr);
-                        //æ”¾åˆ°å·²ç»è®¿é—®è¿‡å¾—é˜Ÿåˆ—
+                        //·Åµ½ÒÑ¾­·ÃÎÊ¹ıµÃ¶ÓÁĞ
                         visited.insert(dealStr);
                     }
                 }
-                //æ”¹å›æ¥
+                //¸Ä»ØÀ´
                 dealStr[j] = temp;
             }
         }
         step++;
     }
     return 0;
-
 }
 
 
 /**
- * å•è¯æ¥é¾™ æ±‚æœ€çŸ­è·¯å¾„
- * ä½¿ç”¨å¹¿åº¦ä¼˜å…ˆæœç´¢
- * é‡‡ç”¨çš„æ˜¯æ ‘çš„æ€æƒ³
+ * µ¥´Ê½ÓÁú Çó×î¶ÌÂ·¾¶
+ * Ê¹ÓÃ¹ã¶ÈÓÅÏÈËÑË÷
+ * ²ÉÓÃµÄÊÇÊ÷µÄË¼Ïë
  * @param beginWord
  * @param endWord
  * @param wordList
@@ -3557,13 +3973,12 @@ int ladderLengthAboutTree(string beginWord, string endWord, vector<string> &word
                 item.pop_back();
             }
         }
-
     }
     return 0;
 }
 
 /**
- * åˆ¤æ–­è¯¥å•è¯æ˜¯å¦å¯ä»¥ç”¨
+ * ÅĞ¶Ï¸Ãµ¥´ÊÊÇ·ñ¿ÉÒÔÓÃ
  * @param temp
  * @param front
  * @param min
@@ -3580,7 +3995,7 @@ bool isOK(vector<string> &temp, string &min) {
 
 
 /**
-      * 127.å•è¯æ¥é¾™  æ±‚æœ€é•¿è·¯åŠ² ä½†æ˜¯äººå®¶è®©æ±‚æœ€çŸ­è·¯åŠ²
+      * 127.µ¥´Ê½ÓÁú  Çó×î³¤Â·¾¢ µ«ÊÇÈË¼ÒÈÃÇó×î¶ÌÂ·¾¢
  * @param beginWord
  * @param endWord
  * @param wordList
@@ -3598,25 +4013,25 @@ int ladderLengthMax(string beginWord, string endWord, vector<string> &wordList) 
 }
 
 /**
- *  å¯»æ‰¾æœ€å¤§çš„æ¥é¾™
+ *  Ñ°ÕÒ×î´óµÄ½ÓÁú
  * @param beginWord
  * @param endWord
  * @param wordList
- * @return 0 è¡¨ç¤ºæœ‰å°¾å·´ï¼Œ>0 è¡¨ç¤ºå°¾å·´çš„é•¿åº¦ï¼Œ-1 è¡¨ç¤ºæ²¡æœ‰å°¾å·´
+ * @return 0 ±íÊ¾ÓĞÎ²°Í£¬>0 ±íÊ¾Î²°ÍµÄ³¤¶È£¬-1 ±íÊ¾Ã»ÓĞÎ²°Í
  */
 int ladderLengthHelp(string beginWord, string endWord, vector<string> &wordList) {
     if (beginWord == endWord) {
-        //æœ‰å°¾å·´
+        //ÓĞÎ²°Í
         return 0;
     }
     int max = -1;
     for (int i = 0; i < wordList.size(); ++i) {
         if (isChangeOne(beginWord, wordList[i])) {
             string tempstr = wordList[i];
-            //æ ‡è®°ä½¿ç”¨
+            //±ê¼ÇÊ¹ÓÃ
             wordList[i] = "";
             int temp = ladderLengthHelp(tempstr, endWord, wordList);
-            //å¤åŸ
+            //¸´Ô­
             wordList[i] = tempstr;
             if (temp > max) {
                 max = temp + 1;
@@ -3628,10 +4043,10 @@ int ladderLengthHelp(string beginWord, string endWord, vector<string> &wordList)
 
 
 /**
- * å•è¯é•¿åº¦ç›¸åŒå¹¶ä¸”å·®ä¸€ä¸ªå­—ç¬¦
+ * µ¥´Ê³¤¶ÈÏàÍ¬²¢ÇÒ²îÒ»¸ö×Ö·û
  */
 bool isChangeOne(string &one, string &two) {
-    //ä»£è¡¨ç”¨è¿‡
+    //´ú±íÓÃ¹ı
     if (one == two || one == "" || two == "") {
         return false;
     }
@@ -3649,7 +4064,7 @@ bool isChangeOne(string &one, string &two) {
 
 /**
  * 367
- *  ç‰›é¡¿è¿­ä»£æ³•
+ *  Å£¶Ùµü´ú·¨
  * @param num
  * @return
  */
@@ -3665,7 +4080,7 @@ bool isPerfectSquare(int num) {
 }
 
 /**
- * å²›å±¿æ•°é‡
+ * µºÓìÊıÁ¿
  * @param grid
  * @return
  */
@@ -3691,11 +4106,10 @@ void numIslandsHelp(vector<vector<char>> &grid, int i, int j) {
     numIslandsHelp(grid, i - 1, j);
     numIslandsHelp(grid, i, j + 1);
     numIslandsHelp(grid, i, j - 1);
-
 }
 
 /**
- * æ¨¡æ‹Ÿæœºå™¨äººè¡Œèµ°
+ * Ä£Äâ»úÆ÷ÈËĞĞ×ß
  * @param commands
  * @param obstacles
  * @return
@@ -3712,22 +4126,22 @@ int robotSim(vector<int> &commands, vector<vector<int>> &obstacles) {
         obstacleSet.insert(make_pair(obstacles[i][0], obstacles[i][1]));
 
     for (int i = 0; i < comLen; i++) {
-        if (commands[i] == -1) {  // -1ï¼šå‘å³è½¬ 90 åº¦
+        if (commands[i] == -1) {// -1£ºÏòÓÒ×ª 90 ¶È
             curdire = (curdire + 1) % 4;
-        } else if (commands[i] == -2) {  // -2ï¼šå‘å·¦è½¬ 90 åº¦
+        } else if (commands[i] == -2) {// -2£ºÏò×ó×ª 90 ¶È
             curdire = (curdire + 3) % 4;
-        } else {  //  1 <= x <= 9ï¼šå‘å‰ç§»åŠ¨ x ä¸ªå•ä½é•¿åº¦
+        } else {//  1 <= x <= 9£ºÏòÇ°ÒÆ¶¯ x ¸öµ¥Î»³¤¶È
             for (int j = 0; j < commands[i]; j++) {
-                //è¯•å›¾èµ°å‡ºä¸€æ­¥ï¼Œå¹¶åˆ¤æ–­æ˜¯å¦é‡åˆ°äº†éšœç¢ç‰©ï¼Œ
+                //ÊÔÍ¼×ß³öÒ»²½£¬²¢ÅĞ¶ÏÊÇ·ñÓöµ½ÁËÕÏ°­Îï£¬
                 int nx = curx + direx[curdire];
                 int ny = cury + direy[curdire];
-                //å½“å‰åæ ‡ä¸æ˜¯éšœç¢ç‚¹ï¼Œè®¡ç®—å¹¶ä¸å­˜å‚¨çš„æœ€å¤§æ¬§å¼è·ç¦»çš„å¹³æ–¹åšæ¯”è¾ƒ
+                //µ±Ç°×ø±ê²»ÊÇÕÏ°­µã£¬¼ÆËã²¢Óë´æ´¢µÄ×î´óÅ·Ê½¾àÀëµÄÆ½·½×ö±È½Ï
                 if (obstacleSet.find(make_pair(nx, ny)) == obstacleSet.end()) {
                     curx = nx;
                     cury = ny;
                     ans = max(ans, curx * curx + cury * cury);
                 } else {
-                    //æ˜¯éšœç¢ç‚¹ï¼Œè¢«æŒ¡ä½äº†ï¼Œåœç•™ï¼Œåªèƒ½ç­‰å¾…ä¸‹ä¸€ä¸ªæŒ‡ä»¤ï¼Œé‚£å¯ä»¥è·³å‡ºå½“å‰æŒ‡ä»¤äº†
+                    //ÊÇÕÏ°­µã£¬±»µ²×¡ÁË£¬Í£Áô£¬Ö»ÄÜµÈ´ıÏÂÒ»¸öÖ¸Áî£¬ÄÇ¿ÉÒÔÌø³öµ±Ç°Ö¸ÁîÁË
                     break;
                 }
             }
@@ -3738,15 +4152,15 @@ int robotSim(vector<int> &commands, vector<vector<int>> &obstacles) {
 
 
 /**
- * 455 å‘é¥¼å¹²
- * @param g å­©å­çš„èƒƒå£
- * @param s é¥¼å¹²çš„å¤§å°
+ * 455 ·¢±ı¸É
+ * @param g º¢×ÓµÄÎ¸¿Ú
+ * @param s ±ı¸ÉµÄ´óĞ¡
  * @return
  */
 int findContentChildren(vector<int> &g, vector<int> &s) {
     sort(g.begin(), g.end());
     sort(s.begin(), s.end());
-    //ç¬¬å‡ ä¸ªå­©å­
+    //µÚ¼¸¸öº¢×Ó
     int index = 0;
     for (int i = 0; i < s.size() && index < g.size(); ++i) {
         if (s[i] >= g[index]) {
@@ -3757,10 +4171,10 @@ int findContentChildren(vector<int> &g, vector<int> &s) {
 }
 
 /**
- * æŸ æª¬æ°´
- * åˆ—å‡ºæ‰€æœ‰çš„æƒ…å†µï¼Œæ¯”è¾ƒéš¾
- * æ‰§è¡Œè€—æ—¶:24 ms,å‡»è´¥äº†98.90% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:16.1 MB,å‡»è´¥äº†15.69% çš„C++ç”¨æˆ·
+ * ÄûÃÊË®
+ * ÁĞ³öËùÓĞµÄÇé¿ö£¬±È½ÏÄÑ
+ * Ö´ĞĞºÄÊ±:24 ms,»÷°ÜÁË98.90% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:16.1 MB,»÷°ÜÁË15.69% µÄC++ÓÃ»§
  * @param bills
  * @return
  */
@@ -3796,7 +4210,7 @@ bool lemonadeChange(vector<int> &bills) {
 }
 
 /**
- * 48.æ—‹è½¬å›¾åƒ
+ * 48.Ğı×ªÍ¼Ïñ
  * @param matrix
  *  . . . . . . .
  *  . . . . . . .
@@ -3815,23 +4229,21 @@ void rotate(vector<vector<int>> &matrix) {
     int temp;
 
     for (int i = 0; i < matrix.size() / 2; ++i) {
-
-
     }
 }
 
 ListNode *removeNthFromEnd(ListNode *head, int n) {
     ListNode *end = head;
-    //å…ˆç§»åŠ¨nä¸ªèŠ‚ç‚¹
+    //ÏÈÒÆ¶¯n¸ö½Úµã
     while (n > 0 && end != nullptr) {
         n--;
         end = end->next;
     }
-    //å¦‚æœåŒæ—¶ä¸º0å’Œnullptr è¯´æ˜åˆ é™¤ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
+    //Èç¹ûÍ¬Ê±Îª0ºÍnullptr ËµÃ÷É¾³ıµÚÒ»¸ö½Úµã
     if (n == 0 && end == nullptr) {
         return head->next;
     }
-    //è¯´æ˜åˆ é™¤å…¶ä»–èŠ‚ç‚¹
+    //ËµÃ÷É¾³ıÆäËû½Úµã
     if (n == 0) {
         ListNode *index = head;
         while (end->next != nullptr) {
@@ -3844,7 +4256,7 @@ ListNode *removeNthFromEnd(ListNode *head, int n) {
 }
 
 /**
- * 122 ä¹°å–è‚¡ç¥¨çš„æœ€ä½³æ—¶æœºII
+ * 122 ÂòÂô¹ÉÆ±µÄ×î¼ÑÊ±»úII
  * @param prices
  * @return
  */
@@ -3862,7 +4274,7 @@ int maxProfit(vector<int> &prices) {
 }
 
 /**
- * 17.09 ç¬¬kä¸ªæ•°
+ * 17.09 µÚk¸öÊı
  * @param k
  * @return
  */
@@ -3897,7 +4309,7 @@ int getKthMagicNumber(int k) {
 }
 
 /**
- * 51. N çš‡åé—®é¢˜
+ * 51. N »ÊºóÎÊÌâ
  * @param n
  * @return
  */
@@ -3924,9 +4336,8 @@ vector<vector<string>> solveNQueens(int n) {
  * @param n
  * @param k
  */
-void
-NQueensHelp(vector<vector<string>> &result, vector<int> &temp, int *lie, int *na, int *pie, int n,
-            int k) {
+void NQueensHelp(vector<vector<string>> &result, vector<int> &temp, int *lie, int *na, int *pie, int n,
+                 int k) {
     if (n == k) {
         vector<string> item;
         for (int i = 0; i < temp.size(); ++i) {
@@ -3958,9 +4369,7 @@ NQueensHelp(vector<vector<string>> &result, vector<int> &temp, int *lie, int *na
 }
 
 bool isTrue(int *lie, int *na, int *pie, int n, int k, int i) {
-    if (lie[i]
-        || na[n + k - i]
-        || pie[k + i]) {
+    if (lie[i] || na[n + k - i] || pie[k + i]) {
         return false;
     }
     return true;
@@ -3975,7 +4384,7 @@ vector<vector<int>> permuteUnique(vector<int> &nums) {
 
 /**
  *
- * å‰ªæ‰ç”¨è¿‡çš„æ•°
+ * ¼ôµôÓÃ¹ıµÄÊı
  * @param result
  * @param nums
  * @param k
@@ -4001,7 +4410,7 @@ void permuteUniqueHelp(vector<vector<int>> &result, vector<int> &nums, int k) {
 }
 
 /**
- * 46.å…¨æ’åˆ—
+ * 46.È«ÅÅÁĞ
  * @param nums
  * @return
  */
@@ -4012,7 +4421,7 @@ vector<vector<int>> permute2(vector<int> &nums) {
 }
 
 /**
- * ç¬¬å‡ ä¸ªæ•°å’Œåé¢çš„æ•°è¿›è¡Œäº¤æ¢
+ * µÚ¼¸¸öÊıºÍºóÃæµÄÊı½øĞĞ½»»»
  * @param result
  * @param nums
  * @param k
@@ -4034,8 +4443,8 @@ void permute2Help(vector<vector<int>> &result, vector<int> &nums, int k) {
 }
 
 /**
- * çœ‹æˆé€‰ä¸é€‰çš„é—®é¢˜
- * ç¬¬ä¸€æ­¥é€‰ä¸é€‰1ï¼Œç¬¬äºŒæ­¥é€‰ä¸é€‰2 ä¾æ¬¡ä¸‹å»
+ * ¿´³ÉÑ¡²»Ñ¡µÄÎÊÌâ
+ * µÚÒ»²½Ñ¡²»Ñ¡1£¬µÚ¶ş²½Ñ¡²»Ñ¡2 ÒÀ´ÎÏÂÈ¥
  * @param n
  * @param k
  * @return
@@ -4049,17 +4458,17 @@ vector<vector<int>> combine2(int n, int k) {
 
 /**
  *
- * @param result ç»“æœ
- * @param temp  ä¸´æ—¶çš„
- * @param n æœ‰å¤šå°‘ä¸ªæ•°
- * @param k è¦é€‰å¤šå°‘ä¸ªæ•°
- * @param i æ”¹é€‰é‚£ä¸ªæ•°
+ * @param result ½á¹û
+ * @param temp  ÁÙÊ±µÄ
+ * @param n ÓĞ¶àÉÙ¸öÊı
+ * @param k ÒªÑ¡¶àÉÙ¸öÊı
+ * @param i ¸ÄÑ¡ÄÇ¸öÊı
  */
 void combine2Help(vector<vector<int>> &result, vector<int> &temp, int n, int k, int i) {
     if (temp.size() + (n - i + 1) < k) {
         return;
     }
-    //é€‰å¤Ÿäº†
+    //Ñ¡¹»ÁË
     if (temp.size() == k) {
         result.push_back(temp);
         return;
@@ -4072,9 +4481,9 @@ void combine2Help(vector<vector<int>> &result, vector<int> &temp, int n, int k, 
 
 
 /**
- * 77 ç»„åˆ
- * çœ‹æˆé€‰äº†ä»€ä¹ˆçš„é—®é¢˜
- * ç¬¬ä¸€æ­¥é€‰1 ï¼Œç¬¬äºŒéƒ¨å°±è¦ä»2å¼€å§‹é€‰ä¸€ä¸ªï¼Œä¾æ¬¡é€‰ä¸‹æ¥
+ * 77 ×éºÏ
+ * ¿´³ÉÑ¡ÁËÊ²Ã´µÄÎÊÌâ
+ * µÚÒ»²½Ñ¡1 £¬µÚ¶ş²¿¾ÍÒª´Ó2¿ªÊ¼Ñ¡Ò»¸ö£¬ÒÀ´ÎÑ¡ÏÂÀ´
  * @param n
  * @param k
  * @return
@@ -4088,12 +4497,12 @@ vector<vector<int>> combine(int n, int k) {
 
 /**
  *
- * @param result ç»“æœ
- * @param temp ä¸­é—´å€¼
+ * @param result ½á¹û
+ * @param temp ÖĞ¼äÖµ
  * @param n 1..n
- * @param k æœ‰å‡ ä¸ªæ•°
- * @param i è¯¥å­˜æ”¾ç¬¬å‡ ä¸ªæ•°
- * @param j å­˜æ”¾äº†æœ€å¤§çš„æ•°
+ * @param k ÓĞ¼¸¸öÊı
+ * @param i ¸Ã´æ·ÅµÚ¼¸¸öÊı
+ * @param j ´æ·ÅÁË×î´óµÄÊı
  */
 void combineHelp(vector<vector<int>> &result, vector<int> &temp, int n, int k, int i, int j) {
     if (i > k) {
@@ -4108,19 +4517,19 @@ void combineHelp(vector<vector<int>> &result, vector<int> &temp, int n, int k, i
 }
 
 /**
- * è¿­ä»£çš„æ–¹å¼
- * å…¶å®å’Œé€’å½’ä¸€æ ·åªä¸è¿‡æœ¬åœ°ç®¡ç†äº†ä¸€ä¸ªæ ˆ
+ * µü´úµÄ·½Ê½
+ * ÆäÊµºÍµİ¹éÒ»ÑùÖ»²»¹ı±¾µØ¹ÜÀíÁËÒ»¸öÕ»
  * @param preorder
  * @param inorder
  * @return
  */
 TreeNode *buildTree3(vector<int> &preorder, vector<int> &inorder) {
-    //todo è¿­ä»£æ–¹å¼
+    //todo µü´ú·½Ê½
     return nullptr;
 }
 
 /**
- * ä½¿ç”¨è¾…åŠ©å‡½æ•°è¿›è¡Œè®¡ç®—
+ * Ê¹ÓÃ¸¨Öúº¯Êı½øĞĞ¼ÆËã
  * @param preorder
  * @param inorder
  * @return
@@ -4135,7 +4544,7 @@ buildTreeHelp(vector<int> &preorder, vector<int> &inorder, int preBegin, int pre
     if (preBegin > preEnd) {
         return nullptr;
     } else {
-        //åœ¨ä¸­åºéå†ä¸­çš„åæ ‡
+        //ÔÚÖĞĞò±éÀúÖĞµÄ×ø±ê
         int rootIndex;
         for (rootIndex = inBegin; rootIndex <= preEnd; rootIndex++) {
             if (inorder[rootIndex] == preorder[preBegin]) {
@@ -4162,7 +4571,7 @@ void show(vector<int> v) {
 
 
 /**
- * 105.æ ¹æ®ä¸€æ£µæ ‘çš„å‰åºéå†ä¸ä¸­åºéå†æ„é€ äºŒå‰æ ‘
+ * 105.¸ù¾İÒ»¿ÃÊ÷µÄÇ°Ğò±éÀúÓëÖĞĞò±éÀú¹¹Ôì¶ş²æÊ÷
  * @param preorder
  * @param inorder
  * @return
@@ -4172,36 +4581,36 @@ TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
         return nullptr;
     }
     int rootnum = preorder[0];
-    //ä¸­åºéå†æ ¹èŠ‚ç‚¹çš„ä½ç½®
+    //ÖĞĞò±éÀú¸ù½ÚµãµÄÎ»ÖÃ
     int inIndex = 0;
     for (inIndex = 0; inIndex < inorder.size(); ++inIndex) {
         if (inorder[inIndex] == rootnum) {
             break;
         }
     }
-    //æ ¹èŠ‚ç‚¹
+    //¸ù½Úµã
     TreeNode *root;
     if (inIndex == 0 && inIndex == inorder.size() - 1) {
-        //æ²¡æœ‰å·¦å­æ ‘
+        //Ã»ÓĞ×ó×ÓÊ÷
         root = new TreeNode(preorder[0], nullptr, nullptr);
     } else if (inIndex == 0) {
-        // æ²¡æœ‰å·¦å­æ ‘
+        // Ã»ÓĞ×ó×ÓÊ÷
         vector<int> childPreOrder(preorder.begin() + 1, preorder.end());
         vector<int> childInorder(inorder.begin() + 1, inorder.end());
         root = new TreeNode(preorder[0], nullptr, buildTree(childPreOrder, childInorder));
     } else if (inIndex == inorder.size() - 1) {
-        //æ²¡æœ‰å³å­æ ‘
+        //Ã»ÓĞÓÒ×ÓÊ÷
         vector<int> childPreOrder(preorder.begin() + 1, preorder.end());
         vector<int> childInOrder(inorder.begin(), inorder.end() - 1);
         root = new TreeNode(preorder[0], buildTree(childPreOrder, childInOrder), nullptr);
     } else {
-        //å·¦å­æ ‘ä¸­åºéå†
+        //×ó×ÓÊ÷ÖĞĞò±éÀú
         vector<int> leftInOrder(inorder.begin(), inorder.begin() + inIndex);
-        //å·¦å­æ ‘å‰åºéå†
+        //×ó×ÓÊ÷Ç°Ğò±éÀú
         vector<int> leftPreOrder(preorder.begin() + 1, preorder.begin() + (leftInOrder.size() + 1));
-        //å³å­æ ‘å‰åºéå†
+        //ÓÒ×ÓÊ÷Ç°Ğò±éÀú
         vector<int> rightPreOrder(preorder.begin() + (leftInOrder.size() + 1), preorder.end());
-        //å³å­æ ‘ä¸­åºéå†
+        //ÓÒ×ÓÊ÷ÖĞĞò±éÀú
         vector<int> rightInOrder(inorder.begin() + (inIndex + 1), inorder.end());
         root = new TreeNode(preorder[0], buildTree(leftPreOrder, leftInOrder),
                             buildTree(rightPreOrder, rightInOrder));
@@ -4210,7 +4619,7 @@ TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
 }
 
 /**
- * 236.å…¬å…±ç¥–å…ˆé—®é¢˜
+ * 236.¹«¹²×æÏÈÎÊÌâ
  * @param root
  * @param p
  * @param q
@@ -4285,7 +4694,7 @@ void reversePrintHelp(ListNode *head, vector<int> &result) {
 }
 
 /**
- * æœ€é•¿åŒå€¼è·¯å¾„
+ * ×î³¤Í¬ÖµÂ·¾¶
  * @param root
  * @return
  */
@@ -4299,7 +4708,7 @@ int longestUnivaluePath(TreeNode *root) {
 
 
 /**
- * æ›¿æ¢ç©ºæ ¼
+ * Ìæ»»¿Õ¸ñ
  * @param s
  * @return
  */
@@ -4317,7 +4726,7 @@ string replaceSpace(string s) {
 
 
 /**
- * ç”Ÿæ‹¬å·ç”Ÿæˆ
+ * ÉúÀ¨ºÅÉú³É
  * @param n
  * @return
  */
@@ -4329,8 +4738,8 @@ vector<string> generateParenthesis(int n) {
 }
 
 /**
- * è¾…åŠ©å‡½æ•°
- *  ç›¸å¯¹æ¥è¯´æ¯”è¾ƒéº»çƒ¦ä¸è¿‡æˆ‘è§‰å¾—è¿™æ ·ä¼šå¿«ä¸€äº›ï¼Œå…¶å®ä¹Ÿå¿«ä¸äº†äº†å“ªé‡Œ
+ * ¸¨Öúº¯Êı
+ *  Ïà¶ÔÀ´Ëµ±È½ÏÂé·³²»¹ıÎÒ¾õµÃÕâÑù»á¿ìÒ»Ğ©£¬ÆäÊµÒ²¿ì²»ÁËÁËÄÄÀï
  * @param n
  * @param a
  * @return
@@ -4360,7 +4769,7 @@ void generateParenthsisHelp(int n, vector<string> &a, vector<string> &b) {
 }
 
 /**
- * å‚»é€’å½’
+ * Éµµİ¹é
  * @param n
  * @param temp
  * @param a
@@ -4376,7 +4785,7 @@ void generateParenthsisHelp(int n, string temp, set<string> &a) {
 }
 
 /**
- * æœ‰ç¼“å­˜çš„é€’å½’
+ * ÓĞ»º´æµÄµİ¹é
  */
 //vector<string> generateParenthsisHelp3(int n, set<string> a) {
 //    if (n == 0) {
@@ -4390,7 +4799,7 @@ void generateParenthsisHelp(int n, string temp, set<string> &a) {
 //}
 
 /**
- * Morris ä¸­åºéå†
+ * Morris ÖĞĞò±éÀú
  * @param root
  * @return
  */
@@ -4400,24 +4809,24 @@ void generateParenthsisHelp(int n, string temp, set<string> &a) {
 //
 //    while (root != nullptr) {
 //        if (root->left != nullptr) {
-//            // predecessor èŠ‚ç‚¹å°±æ˜¯å½“å‰ root èŠ‚ç‚¹å‘å·¦èµ°ä¸€æ­¥ï¼Œç„¶åä¸€ç›´å‘å³èµ°è‡³æ— æ³•èµ°ä¸ºæ­¢
+//            // predecessor ½Úµã¾ÍÊÇµ±Ç° root ½ÚµãÏò×ó×ßÒ»²½£¬È»ºóÒ»Ö±ÏòÓÒ×ßÖÁÎŞ·¨×ßÎªÖ¹
 //            predecessor = root->left;
-//            //æ‰¾æœ€å³èŠ‚ç‚¹
+//            //ÕÒ×îÓÒ½Úµã
 //            while (predecessor->right != nullptr && predecessor->right != root) {
 //                predecessor = predecessor->right;
 //            }
-//            // è®© predecessor çš„å³æŒ‡é’ˆæŒ‡å‘ rootï¼Œç»§ç»­éå†å·¦å­æ ‘
+//            // ÈÃ predecessor µÄÓÒÖ¸ÕëÖ¸Ïò root£¬¼ÌĞø±éÀú×ó×ÓÊ÷
 //            if (predecessor->right == nullptr) {
 //                predecessor->right = root;
 //                root = root->left;
 //            } else {
-//                // è¯´æ˜å·¦å­æ ‘å·²ç»è®¿é—®å®Œäº†ï¼Œæˆ‘ä»¬éœ€è¦æ–­å¼€é“¾æ¥
+//                // ËµÃ÷×ó×ÓÊ÷ÒÑ¾­·ÃÎÊÍêÁË£¬ÎÒÃÇĞèÒª¶Ï¿ªÁ´½Ó
 //                res.push_back(root->val);
 //                predecessor->right = nullptr;
 //                root = root->right;
 //            }
 //        } else {
-//            // å¦‚æœæ²¡æœ‰å·¦å­©å­ï¼Œåˆ™ç›´æ¥è®¿é—®å³å­©å­
+//            // Èç¹ûÃ»ÓĞ×óº¢×Ó£¬ÔòÖ±½Ó·ÃÎÊÓÒº¢×Ó
 //            res.push_back(root->val);
 //            root = root->right;
 //        }
@@ -4441,7 +4850,7 @@ void generateParenthsisHelp(int n, string temp, set<string> &a) {
 //            }
 //        } else {
 //            result.push_back(root->val);
-//            //éå†å³å­æ ‘
+//            //±éÀúÓÒ×ÓÊ÷
 //            root = root->right;
 //        }
 //    }
@@ -4463,7 +4872,7 @@ int maxDepth(TreeNode *root) {
 }
 
 /**
- * å‰kä¸ªé«˜é¢‘è¯æ±‡
+ * Ç°k¸ö¸ßÆµ´Ê»ã
  * @param nums
  * @param k
  * @return
@@ -4492,7 +4901,7 @@ vector<int> topKFrequent(vector<int> &nums, int k) {
 }
 
 /**
- * ä¸‘æ•° æš´åŠ›è§£æ³•
+ * ³óÊı ±©Á¦½â·¨
  * @param n
  * @return
  */
@@ -4509,8 +4918,8 @@ int nthUglyNumber(int n) {
 }
 
 /**
- * ä½¿ç”¨ åŠ¨æ€è§„åˆ’
- *  æœ‰ä¸‰ä¸ªæ•°
+ * Ê¹ÓÃ ¶¯Ì¬¹æ»®
+ *  ÓĞÈı¸öÊı
  *  a=1,b=1,c=1
  *
  * @param n
@@ -4533,10 +4942,10 @@ int nthUglyNumber2(int n) {
                 var[j]++;
             }
         }
-//        for (int k = 0; k < 3; ++k) {
-//            cout << var[k] << '\t';
-//        }
-//        cout << endl;
+        //        for (int k = 0; k < 3; ++k) {
+        //            cout << var[k] << '\t';
+        //        }
+        //        cout << endl;
     }
     return temp.back();
 }
@@ -4559,7 +4968,7 @@ bool isUglyNumber(int n) {
 
 
 /**
- * é€’å½’å±‚æ¬¡éå†
+ * µİ¹é²ã´Î±éÀú
  * @param root
  * @return
  */
@@ -4574,24 +4983,24 @@ vector<vector<int>> levelOrder2(Node *root) {
  * @return
  */
 vector<vector<int>> levelOrderHelp(vector<Node *> children, vector<vector<int>> &result) {
-//    if (children.size() == 0) {
-//        return result;
-//    }
-//    vector<int> items;
-//    vector<Node*> childrenNext;
-//    for(auto child:children){
-//        if(child==NULL){
-//            continue;
-//        }
-//        items.push_back(child->val);
-//        childrenNext.push_back(child)
-//
-//    }
+    //    if (children.size() == 0) {
+    //        return result;
+    //    }
+    //    vector<int> items;
+    //    vector<Node*> childrenNext;
+    //    for(auto child:children){
+    //        if(child==NULL){
+    //            continue;
+    //        }
+    //        items.push_back(child->val);
+    //        childrenNext.push_back(child)
+    //
+    //    }
     return {{}};
 }
 
 /**
- * nå‰æ•°çš„å±‚æ¬¡éå†
+ * n²æÊıµÄ²ã´Î±éÀú
  * @param root
  * @return
  */
@@ -4606,7 +5015,7 @@ vector<vector<int>> levelOrder(Node *root) {
         queue<Node *> next;
         vector<int> items;
         while (!current.empty()) {
-            //å¤„ç†ç¬¬ä¸€ä¸ª
+            //´¦ÀíµÚÒ»¸ö
             items.push_back(current.front()->val);
             vector<Node *> children = current.front()->children;
             for (int i = 0; i < children.size(); ++i) {
@@ -4614,7 +5023,7 @@ vector<vector<int>> levelOrder(Node *root) {
                     next.push(children[i]);
                 }
             }
-            //åˆ é™¤ç¬¬ä¸€ä¸ª
+            //É¾³ıµÚÒ»¸ö
             current.pop();
         }
         result.push_back(items);
@@ -4625,7 +5034,7 @@ vector<vector<int>> levelOrder(Node *root) {
 
 
 /**
- * äºŒå‰æ ‘çš„å‰åºéå†
+ * ¶ş²æÊ÷µÄÇ°Ğò±éÀú
  * @param root
  * @return
  */
@@ -4645,7 +5054,7 @@ vector<int> preorderTraversalHelp(TreeNode *root, vector<int> &result) {
 }
 
 /**
- * äºŒå‰æ ‘çš„ä¸­åºéå†
+ * ¶ş²æÊ÷µÄÖĞĞò±éÀú
  */
 vector<int> inorderTraversal(TreeNode *root) {
     vector<int> result;
@@ -4663,7 +5072,7 @@ vector<int> inorderTraversalHelp(TreeNode *root, vector<int> &result) {
 }
 
 /**
- * å­—æ¯å¼‚ä½è¯åˆ†ç»„
+ * ×ÖÄ¸ÒìÎ»´Ê·Ö×é
  * @param strs
  * @return
  */
@@ -4674,8 +5083,9 @@ vector<vector<string>> groupAnagrams(vector<string> &strs) {
         sort(deal_string.begin(), deal_string.end());
         result[deal_string].push_back(strs[i]);
     }
-    vector<vector<string >> res;
-    map<string, vector<string>>::iterator item;
+    vector<vector<string>> res;
+    map<string, vector<string>>::iterator
+            item;
     for (item = result.begin(); item != result.end(); item++) {
         res.push_back(item->second);
     }
@@ -4683,7 +5093,7 @@ vector<vector<string>> groupAnagrams(vector<string> &strs) {
 }
 
 /**
- * nå‰æ•°çš„å‰åºéå†
+ * n²æÊıµÄÇ°Ğò±éÀú
  * @param root
  * @return
  */
@@ -4702,7 +5112,7 @@ vector<int> preorderhelp(Node *root, vector<int> &result) {
 }
 
 /**
- * æœ‰æ•ˆçš„å­—æ¯ç§»ä½è¯
+ * ÓĞĞ§µÄ×ÖÄ¸ÒÆÎ»´Ê
  * @param s
  * @param t
  * @return
@@ -4729,7 +5139,7 @@ bool isAnagram(string s, string t) {
 }
 
 /**
- * æ•°å­¦æ³•
+ * ÊıÑ§·¨
  * @param num
  * @return
  */
@@ -4738,7 +5148,7 @@ int addDigits2(int num) {
 }
 
 /**
- * å„ä½ç›¸åŠ 
+ * ¸÷Î»Ïà¼Ó
  * @param num
  * @return
  */
@@ -4782,7 +5192,7 @@ vector<string> fizzBuzz(int n) {
 }
 
 /**
- * åˆ é™¤æœ€å¤–å±‚çš„æ‹¬å·
+ * É¾³ı×îÍâ²ãµÄÀ¨ºÅ
  * n=0&&(
  * n=0&&)
  * @param S
@@ -4811,68 +5221,63 @@ string removeOuterParentheses(string S) {
 
 
 /**
- * æ»‘åŠ¨çª—å£æœ€å¤§å€¼
+ * »¬¶¯´°¿Ú×î´óÖµ
  * @param nums
  * @param k
  * @return
  */
 vector<int> maxSlidingWindow(vector<int> &nums, int
-k) {
+                                                        k) {
     deque<int> queue;
     vector<int> result;
     for (
             int i = 0;
             i < nums.
 
-                    size();
+                size();
 
             ++i) {
         if (!queue.
 
-                empty() &&
+             empty() &&
 
             i - queue.
 
-                    front()
+                            front()
 
-            >= k) {
-//å…ƒç´ è¿‡æœŸ
+                    >= k) {
+            //ÔªËØ¹ıÆÚ
             queue.
 
                     pop_front();
-
         }
 
-//å°¾å…ƒç´ å°äºå¾…æ’å…¥å…ƒç´ 
+        //Î²ÔªËØĞ¡ÓÚ´ı²åÈëÔªËØ
         while (!queue.
 
                 empty() &&
 
                nums[queue.
 
-                       back()
+                    back()
 
-               ] < nums[i]) {
+        ] < nums[i]) {
             queue.
 
                     pop_back();
-
         }
-        queue.
-                push_back(i);
+        queue.push_back(i);
 
         if (i < k - 1) {
             continue;
         }
-        result.
-                push_back(nums[queue[0]]);
+        result.push_back(nums[queue[0]]);
     }
-    return
-            result;
+    return result;
 }
 
 /**
- * ä¸¤ä¸ªæ•°ç»„çš„äº¤é›†
+ * Á½¸öÊı×éµÄ½»¼¯
  * @param nums1
  * @param nums2
  * @return
@@ -4896,7 +5301,7 @@ vector<int> intersect(vector<int> &nums1, vector<int> &nums2) {
 }
 
 /**
- * æ¥é›¨æ°´
+ * ½ÓÓêË®
  * @param height
  * @return
  */
@@ -4928,7 +5333,7 @@ int trap(vector<int> &height) {
 
 
 /**
- * åˆå¹¶ä¸¤ä¸ªæœ‰é¡ºåºæ•°ç»„
+ * ºÏ²¢Á½¸öÓĞË³ĞòÊı×é
  * @param nums1
  * @param m
  * @param nums2
@@ -4950,8 +5355,9 @@ void merge(vector<int> &nums1, int m, vector<int> &nums2, int n) {
     }
 }
 
+
 /**
- * 283.ç§»åŠ¨é›¶
+ * 283.ÒÆ¶¯Áã
  * @param nums
  */
 void moveZeroes(vector<int> &nums) {
@@ -4968,8 +5374,8 @@ void moveZeroes(vector<int> &nums) {
 }
 
 /**
- * 299.çŒœè°œè¯­
- * ä½¿ç”¨hashmap åŠ vectoræ–¹å¼
+ * 299.²ÂÃÕÓï
+ * Ê¹ÓÃhashmap ¼Óvector·½Ê½
  * @param secret
  * @param guess
  * @return
@@ -5000,23 +5406,23 @@ string getHint(string secret, string guess) {
 }
 
 /**
- * æ—‹è½¬æ•°ç»„
+ * Ğı×ªÊı×é
  * @param nums
  * @param k
  */
 void rotate(vector<int> &nums, int
-k) {
-//å­˜æ”¾ä¸´æ—¶æ•°æ®
+                                       k) {
+    //´æ·ÅÁÙÊ±Êı¾İ
     int temp = nums[0];
-//æ•°ç»„é•¿åº¦
+    //Êı×é³¤¶È
     int size = nums.size();
-//äº¤æ¢äº†å¤šå°‘æ¬¡
+    //½»»»ÁË¶àÉÙ´Î
     int count = 0;
-//æ¯è½®ç¬¬ä¸€æ¬¡çš„åæ ‡æ˜¯å¤šå°‘
+    //Ã¿ÂÖµÚÒ»´ÎµÄ×ø±êÊÇ¶àÉÙ
     int firstIndex = 0;
-//äº¤æ¢åæ ‡
+    //½»»»×ø±ê
     int index = 0;
-//äº¤æ¢åçš„ä¸‹ä¸€ä¸ªä½ç½®
+    //½»»»ºóµÄÏÂÒ»¸öÎ»ÖÃ
     int next = 0;
     while (count < size) {
         next = (index + k) % size;
@@ -5039,7 +5445,7 @@ k) {
 }
 
 /**
- * åˆ é™¤æ’åºæ•°ç»„ä¸­çš„é‡å¤é¡¹
+ * É¾³ıÅÅĞòÊı×éÖĞµÄÖØ¸´Ïî
  * @param nums
  * @return
  */
@@ -5057,7 +5463,7 @@ int removeDuplicates2(vector<int> &nums) {
 }
 
 /**
- * ä¸¤ä¸ªé˜Ÿåˆ—çš„åˆå¹¶ é€’å½’
+ * Á½¸ö¶ÓÁĞµÄºÏ²¢ µİ¹é
  * @param l1
  * @param l2
  * @return
@@ -5097,13 +5503,13 @@ ListNode *mergeTwoLists3(ListNode *l1, ListNode *l2) {
 }
 
 /**
- * éé€’å½’å½¢å¼
+ * ·Çµİ¹éĞÎÊ½
  * @param head
  * @return
  */
 
 /**
- * é€’å½’å½¢å¼
+ * µİ¹éĞÎÊ½
  * @param head
  * @return
  */
@@ -5127,7 +5533,7 @@ ListNode *swapPairs2(ListNode *head) {
     ListNode *top = NULL;
     ListNode *tail = NULL;
     head = NULL;
-    //å¤´æ’æ³•å°†ä¸¤ä¸ªèŠ‚ç‚¹å€’å™
+    //Í·²å·¨½«Á½¸ö½Úµãµ¹Ğğ
     while (p != NULL) {
         top = p;
         p = p->next;
@@ -5141,7 +5547,7 @@ ListNode *swapPairs2(ListNode *head) {
             head = top;
         }
     }
-    //å¤´æ’æ³•å°†æ‰€æœ‰çš„å€’å™
+    //Í·²å·¨½«ËùÓĞµÄµ¹Ğğ
     p = head;
     head = NULL;
     while (p != NULL) {
@@ -5155,23 +5561,23 @@ ListNode *swapPairs2(ListNode *head) {
 
 
 /**
- * ä¸¤ä¸ªæ•°ä¹‹å’Œ
- * 1. æš´åŠ›æ–¹æ³•
- * 2. æ’åºåŠ åŒæŒ‡é’ˆ
- * 3. hashè¡¨
+ * Á½¸öÊıÖ®ºÍ
+ * 1. ±©Á¦·½·¨
+ * 2. ÅÅĞò¼ÓË«Ö¸Õë
+ * 3. hash±í
  */
 
 /**
- * ä¸¤ä¸ªæ•°ä¹‹å’Œ
+ * Á½¸öÊıÖ®ºÍ
  * @param nums
  * @param target
  * @return
  */
 vector<int> twoSum2(vector<int> &nums, int target) {
-//æ’åº
+    //ÅÅĞò
     sort(nums.begin(), nums.end());
     vector<int> result;
-//åŒæŒ‡é’ˆ
+    //Ë«Ö¸Õë
     for (int i = 0; i < nums.size(); ++i) {
         for (int j = i + 1; j < nums.size(); ++j) {
             if (nums[i] + nums[j] == target) {
@@ -5185,24 +5591,24 @@ vector<int> twoSum2(vector<int> &nums, int target) {
 }
 
 vector<int> twoSum2HashTable(vector<int> &nums, int target) {
-//åˆ›å»ºä¸€ä¸ªhashè¡¨
+    //´´½¨Ò»¸öhash±í
     unordered_map<int, int> table;
 
     for (int i = 0; i < nums.size(); ++i) {
-        //æŸ¥è¯¢æ˜¯å¦æœ‰å¯¹åº”çš„å€¼
+        //²éÑ¯ÊÇ·ñÓĞ¶ÔÓ¦µÄÖµ
         auto item = table.find(target - nums[i]);
-        //å¦‚æœæœ‰å°±è¿”å›
+        //Èç¹ûÓĞ¾Í·µ»Ø
         if (item != table.end()) {
             return {item->second, i};
         }
-        //å¦‚æœæ²¡æœ‰å°±æ·»åŠ åˆ°hashè¡¨ä¸­
+        //Èç¹ûÃ»ÓĞ¾ÍÌí¼Óµ½hash±íÖĞ
         table[nums[i]] = i;
     }
     return {};
 }
 
 /**
- * åŠ ä¸€
+ * ¼ÓÒ»
  * @param digits
  * @return
  */
@@ -5242,10 +5648,10 @@ int climbStairs2(int n) {
 }
 
 /**
- * æ¯”è¾ƒå«æœ‰é€€æ ¼çš„å­—ç¬¦ä¸²
- * åŒæŒ‡é’ˆæ³•
- * æ‰§è¡Œè€—æ—¶:0 ms,å‡»è´¥äº†100.00% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:6.3 MB,å‡»è´¥äº†51.05% çš„C++ç”¨æˆ·
+ * ±È½Ïº¬ÓĞÍË¸ñµÄ×Ö·û´®
+ * Ë«Ö¸Õë·¨
+ * Ö´ĞĞºÄÊ±:0 ms,»÷°ÜÁË100.00% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:6.3 MB,»÷°ÜÁË51.05% µÄC++ÓÃ»§
  * @param S
  * @param T
  * @return
@@ -5283,7 +5689,7 @@ bool backspaceCompare(string S, string T) {
 //}
 
 /**
- * 32. æœ€é•¿æœ‰æ•ˆæ‹¬å· !!!
+ * 32. ×î³¤ÓĞĞ§À¨ºÅ !!!
  *
  * @param s
  * @return
@@ -5314,9 +5720,9 @@ int longestValidParentheses2_2(string s) {
 }
 
 /**
- * 24.ä¸¤ä¸¤äº¤æ¢é“¾è¡¨ä¸­çš„èŠ‚ç‚¹
- * æ‰§è¡Œè€—æ—¶:4 ms,å‡»è´¥äº†66.12% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:7.5 MB,å‡»è´¥äº†5.06% çš„C++ç”¨æˆ·
+ * 24.Á½Á½½»»»Á´±íÖĞµÄ½Úµã
+ * Ö´ĞĞºÄÊ±:4 ms,»÷°ÜÁË66.12% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:7.5 MB,»÷°ÜÁË5.06% µÄC++ÓÃ»§
  * @param head
  * @return
  */
@@ -5349,13 +5755,13 @@ ListNode *swapPairs(ListNode *head) {
 }
 
 /**
- * 54.èºæ—‹çŸ©é˜µ
- * æ‰§è¡Œè€—æ—¶:0 ms,å‡»è´¥äº†100.00% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:6.8 MB,å‡»è´¥äº†20.05% çš„C++ç”¨æˆ·
+ * 54.ÂİĞı¾ØÕó
+ * Ö´ĞĞºÄÊ±:0 ms,»÷°ÜÁË100.00% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:6.8 MB,»÷°ÜÁË20.05% µÄC++ÓÃ»§
  * @param matrix
  * @return
  */
-vector<int> spiralOrder(vector<vector<int >> &matrix) {
+vector<int> spiralOrder(vector<vector<int>> &matrix) {
     vector<int> result;
     int top = 0;
     int left = 0;
@@ -5366,7 +5772,7 @@ vector<int> spiralOrder(vector<vector<int >> &matrix) {
     int right = matrix[0].size() - 1;
 
     while (top <= down && left <= right) {
-        //å‘å³
+        //ÏòÓÒ
         for (int i = left; i <= right; ++i) {
             result.push_back(matrix[top][i]);
         }
@@ -5374,7 +5780,7 @@ vector<int> spiralOrder(vector<vector<int >> &matrix) {
         if (top > down) {
             break;
         }
-        //å‘ä¸‹
+        //ÏòÏÂ
         for (int j = top; j <= down; ++j) {
             result.push_back(matrix[j][right]);
         }
@@ -5382,7 +5788,7 @@ vector<int> spiralOrder(vector<vector<int >> &matrix) {
         if (left > right) {
             break;
         }
-        //å‘å·¦
+        //Ïò×ó
         for (int k = right; k >= left; --k) {
             result.push_back(matrix[down][k]);
         }
@@ -5390,21 +5796,20 @@ vector<int> spiralOrder(vector<vector<int >> &matrix) {
         if (top > down) {
             break;
         }
-        //å‘ä¸Š
+        //ÏòÉÏ
         for (int l = down; l >= top; --l) {
             result.push_back(matrix[l][left]);
         }
         left++;
     }
-
     return result;
 }
 
 
 /**
- * 8.å­—ç¬¦ä¸²è½¬åŒ–æˆæ•´æ•°
- * æ‰§è¡Œè€—æ—¶:12 ms,å‡»è´¥äº†14.97% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:6.3 MB,å‡»è´¥äº†25.32% çš„C++ç”¨æˆ·
+ * 8.×Ö·û´®×ª»¯³ÉÕûÊı
+ * Ö´ĞĞºÄÊ±:12 ms,»÷°ÜÁË14.97% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:6.3 MB,»÷°ÜÁË25.32% µÄC++ÓÃ»§
  * @param s
  * @return
  */
@@ -5415,12 +5820,12 @@ int myAtoi(string s) {
 
     for (int index = 0; index < s.length(); index++) {
         char a = s.at(index);
-        //æ¸…é™¤ç©ºç™½å­—ç¬¦
+        //Çå³ı¿Õ°××Ö·û
         if (flag && a == ' ') {
             continue;
         }
         flag = false;
-        //å¼€å§‹å–å­—ç¬¦ ç¬¦å·çš„åˆ¤æ–­
+        //¿ªÊ¼È¡×Ö·û ·ûºÅµÄÅĞ¶Ï
         if (positive == 0) {
             if (a == '-') {
                 positive = -1;
@@ -5432,7 +5837,7 @@ int myAtoi(string s) {
                 }
             }
         }
-        //æ•°å­—çš„åˆ¤æ–­
+        //Êı×ÖµÄÅĞ¶Ï
         int temp = a - '0';
         if (temp >= 0 && temp < 10) {
             sum = sum * 10 + temp;
@@ -5450,10 +5855,10 @@ int myAtoi(string s) {
 }
 
 /**
- * 26.ç»™å®šä¸€ä¸ªæ’åºæ•°ç»„ï¼Œä½ éœ€è¦åœ¨ åŸåœ° åˆ é™¤é‡å¤å‡ºç°çš„å…ƒç´ ï¼Œä½¿å¾—æ¯ä¸ªå…ƒç´ åªå‡ºç°ä¸€æ¬¡ï¼Œè¿”å›ç§»é™¤åæ•°ç»„çš„æ–°é•¿åº¦
+ * 26.¸ø¶¨Ò»¸öÅÅĞòÊı×é£¬ÄãĞèÒªÔÚ Ô­µØ É¾³ıÖØ¸´³öÏÖµÄÔªËØ£¬Ê¹µÃÃ¿¸öÔªËØÖ»³öÏÖÒ»´Î£¬·µ»ØÒÆ³ıºóÊı×éµÄĞÂ³¤¶È
  *
- * æ‰§è¡Œè€—æ—¶:12 ms,å‡»è´¥äº†99.10% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:13.4 MB,å‡»è´¥äº†8.47% çš„C++ç”¨æˆ·
+ * Ö´ĞĞºÄÊ±:12 ms,»÷°ÜÁË99.10% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:13.4 MB,»÷°ÜÁË8.47% µÄC++ÓÃ»§
  *
  * @param nums
  * @return
@@ -5474,13 +5879,12 @@ int removeDuplicates(vector<int> &nums) {
         }
     }
     return index + 1;
-
 }
 
 /**
- * 21 åˆå¹¶ä¸¤ä¸ªæœ‰åºé“¾è¡¨
- * æ‰§è¡Œè€—æ—¶:12 ms,å‡»è´¥äº†53.97% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:14.6 MB,å‡»è´¥äº†5.26% çš„C++ç”¨æˆ·
+ * 21 ºÏ²¢Á½¸öÓĞĞòÁ´±í
+ * Ö´ĞĞºÄÊ±:12 ms,»÷°ÜÁË53.97% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:14.6 MB,»÷°ÜÁË5.26% µÄC++ÓÃ»§
  * @param l1
  * @param l2
  * @return
@@ -5507,12 +5911,12 @@ ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
 }
 
 /**
- * 5.æœ€é•¿çš„å›æ–‡å­ä¸²
- * æ‰§è¡Œè€—æ—¶:128 ms,å‡»è´¥äº†61.30% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:6.9 MB,å‡»è´¥äº†81.10% çš„C++ç”¨æˆ·
- * æƒ³åšæ‰©å±•
- * é¦™æ²¹æ‰©å±•
- * åŒæ—¶å‘ä¸¤éæ‰©å±•
+ * 5.×î³¤µÄ»ØÎÄ×Ó´®
+ * Ö´ĞĞºÄÊ±:128 ms,»÷°ÜÁË61.30% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:6.9 MB,»÷°ÜÁË81.10% µÄC++ÓÃ»§
+ * Ïë×öÀ©Õ¹
+ * ÏãÓÍÀ©Õ¹
+ * Í¬Ê±ÏòÁ½±éÀ©Õ¹
  * @param s
  * @return
  */
@@ -5523,15 +5927,15 @@ string longestPalindrome(string s) {
     for (int i = 0; i < size; ++i) {
         int left = i;
         int right = i;
-        //å‘å·¦æ‰©å±•
+        //Ïò×óÀ©Õ¹
         while (left >= 0 && s.at(left) == s.at(i)) {
             left--;
         }
-        //å‘å³æ‰©å±•
+        //ÏòÓÒÀ©Õ¹
         while (right < size && s.at(right) == s.at(i)) {
             right++;
         }
-        //åŒæ—¶å‘ä¸¤ä¾§æ‰©å±•
+        //Í¬Ê±ÏòÁ½²àÀ©Õ¹
         while (left >= 0 && right < size && s.at(left) == s.at(right)) {
             left--;
             right++;
@@ -5542,23 +5946,22 @@ string longestPalindrome(string s) {
             max = right - left + 1;
             start = left;
         }
-
     }
     return s.substr(start, max);
 }
 
 /**
- * 63.ä¸åŒè·¯å¾„
- * 4 ms,å‡»è´¥äº†96.28% çš„C++ç”¨æˆ·
- * 7.7 MB,å‡»è´¥äº†71.63% çš„C++ç”¨æˆ·
+ * 63.²»Í¬Â·¾¶
+ * 4 ms,»÷°ÜÁË96.28% µÄC++ÓÃ»§
+ * 7.7 MB,»÷°ÜÁË71.63% µÄC++ÓÃ»§
  * @param obstacleGrid
  * @return
  */
-int uniquePathsWithObstacles(vector<vector<int >> &obstacleGrid) {
+int uniquePathsWithObstacles(vector<vector<int>> &obstacleGrid) {
     int n = obstacleGrid.size();
     int m = obstacleGrid[0].size();
     vector<int> countBoard(m);
-    //åˆå§‹åŒ–
+    //³õÊ¼»¯
     for (int i = 0; i < m; ++i) {
         countBoard[i] = 0;
     }
@@ -5576,9 +5979,9 @@ int uniquePathsWithObstacles(vector<vector<int >> &obstacleGrid) {
 }
 
 /**
- * 62.ä¸åŒè·¯å¾„
- *å†…å­˜æ¶ˆè€—:5.7 MB,å‡»è´¥äº†98.30% çš„C++ç”¨æˆ·
- * æ‰§è¡Œè€—æ—¶:0 ms,å‡»è´¥äº†100.00% çš„C++ç”¨æˆ·
+ * 62.²»Í¬Â·¾¶
+ *ÄÚ´æÏûºÄ:5.7 MB,»÷°ÜÁË98.30% µÄC++ÓÃ»§
+ * Ö´ĞĞºÄÊ±:0 ms,»÷°ÜÁË100.00% µÄC++ÓÃ»§
  * @param m
  * @param n
  * @return
@@ -5598,33 +6001,32 @@ int uniquePaths(int m, int n) {
         down *= j;
     }
     return up / down;
-
 }
 
 /**
- * 18.å››ä¸ªæ•°æ±‚å’Œ
- * æ‰§è¡Œè€—æ—¶:112 ms,å‡»è´¥äº†42.65% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:12.6 MB,å‡»è´¥äº†5.02% çš„C++ç”¨æˆ·
+ * 18.ËÄ¸öÊıÇóºÍ
+ * Ö´ĞĞºÄÊ±:112 ms,»÷°ÜÁË42.65% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:12.6 MB,»÷°ÜÁË5.02% µÄC++ÓÃ»§
  * @param nums
  * @param target
  * @return
  */
 vector<vector<int>> fourSum(vector<int> &nums, int
-target) {
+                                                       target) {
     vector<vector<int>> result;
     int length = nums.size();
     if (length < 4) {
-        return
-                result;
+        return result;
     }
     sort(nums
                  .
 
-                         begin(), nums
+         begin(),
+         nums
 
                  .
 
-                         end()
+         end()
 
     );
     for (int i = 0; i < length - 2; ++i) {
@@ -5634,8 +6036,7 @@ target) {
             while (n < m) {
                 int sum = nums[i] + nums[j] + nums[n] + nums[m];
                 if (sum == target) {
-                    result.push_back({
-                                             nums[i], nums[j], nums[n++], nums[m--]});
+                    result.push_back({nums[i], nums[j], nums[n++], nums[m--]});
                     while (nums[n] == nums[n - 1] && n < m) {
                         n++;
                     }
@@ -5666,9 +6067,9 @@ target) {
 }
 
 /**
- * 15. ä¸‰ä¸ªæ•°ä¹‹å’Œ
- * 104 ms,å‡»è´¥äº†75.35% çš„C++ç”¨æˆ·
- * :19.8 MB,å‡»è´¥äº†38.72% çš„C++ç”¨æˆ·
+ * 15. Èı¸öÊıÖ®ºÍ
+ * 104 ms,»÷°ÜÁË75.35% µÄC++ÓÃ»§
+ * :19.8 MB,»÷°ÜÁË38.72% µÄC++ÓÃ»§
  *
  * @param nums
  * @return
@@ -5680,7 +6081,7 @@ vector<vector<int>> threeSum(vector<int> &nums) {
     }
     sort(nums.begin(), nums.end());
     int length = nums.size();
-    //ç¬¬ä¸€ä¸ªæ•°å­—å¿…é¡»å°äº0
+    //µÚÒ»¸öÊı×Ö±ØĞëĞ¡ÓÚ0
     int i = 0;
     while (i < length - 2 && nums[i] <= 0) {
         int j = i + 1;
@@ -5689,11 +6090,11 @@ vector<vector<int>> threeSum(vector<int> &nums) {
             int sum = nums[i] + nums[j] + nums[k];
             if (sum == 0) {
                 result.push_back({nums[i], nums[j++], nums[k--]});
-                //ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªä¸åŒçš„æ•°å­—
+                //ÒÆ¶¯µ½ÏÂÒ»¸ö²»Í¬µÄÊı×Ö
                 while (nums[j - 1] == nums[j] && j < k) {
                     j++;
                 }
-                //ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªä¸åŒçš„æ•°å­—
+                //ÒÆ¶¯µ½ÏÂÒ»¸ö²»Í¬µÄÊı×Ö
                 while (nums[k] == nums[k + 1] && j < k) {
                     k--;
                 }
@@ -5719,9 +6120,9 @@ vector<vector<int>> threeSum(vector<int> &nums) {
 
 
 /**
- * 17 ç”µè¯å·ç çš„å­—æ¯ç»„åˆ
- *å†…å­˜æ¶ˆè€—:6.3 MB,å‡»è´¥äº†99.50% çš„C++ç”¨æˆ·
- *æ‰§è¡Œè€—æ—¶:4 ms,å‡»è´¥äº†49.67% çš„C++ç”¨æˆ·
+ * 17 µç»°ºÅÂëµÄ×ÖÄ¸×éºÏ
+ *ÄÚ´æÏûºÄ:6.3 MB,»÷°ÜÁË99.50% µÄC++ÓÃ»§
+ *Ö´ĞĞºÄÊ±:4 ms,»÷°ÜÁË49.67% µÄC++ÓÃ»§
  * @param digits
  * @return
  */
@@ -5736,10 +6137,10 @@ vector<string> letterCombinations(string digits) {
 }
 
 /**
- * @param digits  è¾“å…¥çš„æ•°å­—
- * @param resultString è¿è¡Œæ—¶çš„ç»“æœ
- * @param n å¤„ç†ç¬¬å‡ ä¸ªå­—ç¬¦
- * @param result å°†æ‰€æœ‰çš„ç»“æœæ”¾åˆ°è¯¥é›†åˆä¸­
+ * @param digits  ÊäÈëµÄÊı×Ö
+ * @param resultString ÔËĞĞÊ±µÄ½á¹û
+ * @param n ´¦ÀíµÚ¼¸¸ö×Ö·û
+ * @param result ½«ËùÓĞµÄ½á¹û·Åµ½¸Ã¼¯ºÏÖĞ
  */
 
 void letterCombinationsHelp(string &digits, string &resultString, int n, vector<string> &result) {
@@ -5751,7 +6152,6 @@ void letterCombinationsHelp(string &digits, string &resultString, int n, vector<
         resultString[n] = list[i];
         letterCombinationsHelp(digits, resultString, n + 1, result);
     }
-
 }
 
 string digitsToLetter(char digits) {
@@ -5778,9 +6178,9 @@ string digitsToLetter(char digits) {
 
 
 /**
- * 46 å…¨æ’åˆ—
- * 4 ms,å‡»è´¥äº†88.86% çš„C++ç”¨æˆ·
- * 7.7 MB,å‡»è´¥äº†21.73% çš„C++ç”¨æˆ·
+ * 46 È«ÅÅÁĞ
+ * 4 ms,»÷°ÜÁË88.86% µÄC++ÓÃ»§
+ * 7.7 MB,»÷°ÜÁË21.73% µÄC++ÓÃ»§
  * @param nums
  * @return
  */
@@ -5790,14 +6190,11 @@ vector<vector<int>> permute(vector<int> &nums) {
     return result;
 }
 
-void permute_help(vector<int> &nums, int
-n,
-                  vector<vector<int>> &result
-) {
+void permute_help(vector<int> &nums, int n,
+                  vector<vector<int>> &result) {
     if (n == 0) {
         vector<int> copy(nums);
-        result.
-                push_back(copy);
+        result.push_back(copy);
     }
     for (
             int i = 0;
@@ -5807,8 +6204,7 @@ n,
         nums[i] = nums[n - 1];
         nums[n - 1] =
                 temp;
-        permute_help(nums, n
-                           - 1, result);
+        permute_help(nums, n - 1, result);
         nums[n - 1] = nums[i];
         nums[i] =
                 temp;
@@ -5816,12 +6212,12 @@ n,
 }
 
 /**
- * 37.è§£æ•°ç‹¬
- * å†…å­˜æ¶ˆè€—:6.6 MB,å‡»è´¥äº†51.30% çš„C++ç”¨æˆ·
- * æ‰§è¡Œè€—æ—¶:12 ms,å‡»è´¥äº†43.67% çš„C++ç”¨æˆ·
+ * 37.½âÊı¶À
+ * ÄÚ´æÏûºÄ:6.6 MB,»÷°ÜÁË51.30% µÄC++ÓÃ»§
+ * Ö´ĞĞºÄÊ±:12 ms,»÷°ÜÁË43.67% µÄC++ÓÃ»§
  * @param board
  */
-void solveSudoku(vector<vector<char >> &board) {
+void solveSudoku(vector<vector<char>> &board) {
     solveSudokuHelp(0, board);
 }
 
@@ -5832,7 +6228,7 @@ bool solveSudokuHelp(int n, vector<vector<char>> &board) {
     int x = n % 9;
     int y = n / 9;
     char value = board[y][x];
-    //å¦‚æœæœ‰å€¼å°±ä¸ç”¨åš
+    //Èç¹ûÓĞÖµ¾Í²»ÓÃ×ö
     if (value != '.') {
         return solveSudokuHelp(n + 1, board);
     }
@@ -5840,8 +6236,7 @@ bool solveSudokuHelp(int n, vector<vector<char>> &board) {
     int temp[3][9] = {
             {0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
+            {0, 0, 0, 0, 0, 0, 0, 0, 0}};
     for (int i = 0; i < 9; ++i) {
         if (board[y][i] != '.') {
             if (temp[0][board[y][i] - '1']++ != 0) {
@@ -5879,14 +6274,14 @@ bool solveSudokuHelp(int n, vector<vector<char>> &board) {
 }
 
 /**
- * 36.æ•°ç‹¬æ˜¯å¦æœ‰æ•ˆ
- * æ‰§è¡Œè€—æ—¶:12 ms,å‡»è´¥äº†92.20% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:6.9 MB,å‡»è´¥äº†88.52% çš„C++ç”¨æˆ·
+ * 36.Êı¶ÀÊÇ·ñÓĞĞ§
+ * Ö´ĞĞºÄÊ±:12 ms,»÷°ÜÁË92.20% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:6.9 MB,»÷°ÜÁË88.52% µÄC++ÓÃ»§
  * @param board
  * @return
  */
-bool isValidSudoku(vector<vector<char >> &board) {
-    //æ¨ªå‘éªŒè¯
+bool isValidSudoku(vector<vector<char>> &board) {
+    //ºáÏòÑéÖ¤
     for (int i = 0; i < 9; ++i) {
         int temp[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         for (int j = 0; j < 9; ++j) {
@@ -5899,7 +6294,7 @@ bool isValidSudoku(vector<vector<char >> &board) {
             }
         }
     }
-    //ç«–å‘éªŒè¯
+    //ÊúÏòÑéÖ¤
     for (int i = 0; i < 9; ++i) {
         int temp[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         for (int j = 0; j < 9; ++j) {
@@ -5912,7 +6307,7 @@ bool isValidSudoku(vector<vector<char >> &board) {
             }
         }
     }
-    //3*3éªŒè¯
+    //3*3ÑéÖ¤
     for (int k = 0; k < 3; ++k) {
         for (int i = 0; i < 3; ++i) {
             int temp[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -5934,9 +6329,9 @@ bool isValidSudoku(vector<vector<char >> &board) {
 
 
 /**
- * 12 æ•´æ•°è½¬ç½—é©¬æ•°
- *  æ‰§è¡Œè€—æ—¶:24 ms,å‡»è´¥äº†31.66% çš„C++ç”¨æˆ·
- *  å†…å­˜æ¶ˆè€—:6 MB,å‡»è´¥äº†81.61% çš„C++ç”¨æˆ·
+ * 12 ÕûÊı×ªÂŞÂíÊı
+ *  Ö´ĞĞºÄÊ±:24 ms,»÷°ÜÁË31.66% µÄC++ÓÃ»§
+ *  ÄÚ´æÏûºÄ:6 MB,»÷°ÜÁË81.61% µÄC++ÓÃ»§
  * @param num
  * @return
  */
@@ -5997,10 +6392,10 @@ string roman_map(int n) {
 
 
 /**
- * xçš„å¹³æ–¹æ ¹
- * äºŒåˆ†æŸ¥æ‰¾
- * æ‰§è¡Œè€—æ—¶:4 ms,å‡»è´¥äº†59.28% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:5.7 MB,å‡»è´¥äº†81.35% çš„C++ç”¨æˆ·
+ * xµÄÆ½·½¸ù
+ * ¶ş·Ö²éÕÒ
+ * Ö´ĞĞºÄÊ±:4 ms,»÷°ÜÁË59.28% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:5.7 MB,»÷°ÜÁË81.35% µÄC++ÓÃ»§
  * @param x
  * @return
  */
@@ -6021,15 +6416,14 @@ int mySqrt(int x) {
         } else {
             max = mid;
         }
-
     }
     return max;
 }
 
 /**
- * 70 çˆ¬æ¥¼æ¢¯
- * æ‰§è¡Œè€—æ—¶:0 ms,å‡»è´¥äº†100.00% çš„C++ç”¨æˆ·
- * å†…å­˜æ¶ˆè€—:6 MB,å‡»è´¥äº†29.57% çš„C++ç”¨æˆ·
+ * 70 ÅÀÂ¥Ìİ
+ * Ö´ĞĞºÄÊ±:0 ms,»÷°ÜÁË100.00% µÄC++ÓÃ»§
+ * ÄÚ´æÏûºÄ:6 MB,»÷°ÜÁË29.57% µÄC++ÓÃ»§
  * @param n
  * @return
  */
@@ -6053,7 +6447,7 @@ int climbStairs_help(int *p, int n) {
 
 
 /**
- * 67. ä¸¤ä¸ªäºŒè¿›åˆ¶æ•°æ±‚å’Œ
+ * 67. Á½¸ö¶ş½øÖÆÊıÇóºÍ
  * @param a
  * @param b
  * @return
@@ -6143,9 +6537,9 @@ bool isValid(string s) {
 
 
 /**
- * 1. æ²¡æœ‰åˆ¤æ–­æ˜¯å¦ä¸ºç©ºæƒ…å†µ
- * 2. æ²¡æœ‰åˆ¤æ–­å†…å®¹ä¸ºç©ºçš„æƒ…å†µ
- * 3. æ²¡æœ‰åˆ¤æ–­ç¬¬ä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯å¦è¶…é™çš„æƒ…å†µ
+ * 1. Ã»ÓĞÅĞ¶ÏÊÇ·ñÎª¿ÕÇé¿ö
+ * 2. Ã»ÓĞÅĞ¶ÏÄÚÈİÎª¿ÕµÄÇé¿ö
+ * 3. Ã»ÓĞÅĞ¶ÏµÚÒ»¸ö×Ö·û´®ÊÇ·ñ³¬ÏŞµÄÇé¿ö
  * @param strs
  * @return
  */
@@ -6212,12 +6606,11 @@ int romanToInt(string s) {
         front = temp;
     }
     return sum;
-
 }
 
 
 /**
- * å†’æ³¡
+ * Ã°Åİ
  * @param p
  * @param size
  */
@@ -6239,7 +6632,7 @@ void bubble_sort(int *p, int size) {
 }
 
 /**
- * æ’å…¥æ’åº
+ * ²åÈëÅÅĞò
  * @param p
  * @param size
  */
@@ -6258,7 +6651,7 @@ void insert_sort(int *p, int size) {
 }
 
 /**
- * å½’å¹¶æ’åº
+ * ¹é²¢ÅÅĞò
  * @param p
  * @param size
  */
@@ -6267,7 +6660,7 @@ void merge_sort(int *p, int size) {
 }
 
 /**
- * åˆ†æ²»å‡½æ•°
+ * ·ÖÖÎº¯Êı
  * @param p
  * @param first
  * @param last
@@ -6281,11 +6674,10 @@ void merge_sort_help(int *p, int first, int last) {
     merge_sort_help(p, first, min);
     merge_sort_help(p, min, last);
     merge(p, first, min, last);
-
 }
 
 /**
- * åˆå¹¶å‡½æ•°
+ * ºÏ²¢º¯Êı
  * @param p
  * @param first
  * @param min
@@ -6311,7 +6703,7 @@ void merge(int *p, int first, int min, int last) {
 
 
 /**
- * å¿«é€Ÿæ’åº
+ * ¿ìËÙÅÅĞò
  * @param p
  * @param size
  */
@@ -6320,7 +6712,7 @@ void quick_sort(int *p, int size) {
 }
 
 /**
- * å¿«æ’çš„è¾…åŠ©å‡½æ•°
+ * ¿ìÅÅµÄ¸¨Öúº¯Êı
  * @param p
  * @param first
  * @param last
@@ -6330,13 +6722,13 @@ void quick_sort_help(int *p, int first, int last) {
         return;
     }
     int pivot = partition(p, first, last - 1);
-//    cout << first << '\t' << pivot << '\t' << last << endl;
+    //    cout << first << '\t' << pivot << '\t' << last << endl;
     quick_sort_help(p, first, pivot);
     quick_sort_help(p, pivot + 1, last);
 }
 
 /**
- * æ‰¾åˆ°æ•°ç»„ä¸­é¦–ä¸ªå…ƒç´ çš„æ­£ç¡®ä½ç½® å¤šç§æ–¹æ³•å®ç°
+ * ÕÒµ½Êı×éÖĞÊ×¸öÔªËØµÄÕıÈ·Î»ÖÃ ¶àÖÖ·½·¨ÊµÏÖ
  * @param p
  * @param first
  * @param last
@@ -6372,34 +6764,34 @@ int partition(int *p, int first, int last) {
 
 /**
  *
- * @param s  æ’åºå‡½æ•°
- * @param size æ•°ç»„çš„å¤§å°
- * @param num æ’åºå‡ é
- * @param out æ˜¯å¦æ‰“å°æ—¥å¿—
+ * @param s  ÅÅĞòº¯Êı
+ * @param size Êı×éµÄ´óĞ¡
+ * @param num ÅÅĞò¼¸±é
+ * @param out ÊÇ·ñ´òÓ¡ÈÕÖ¾
  */
 void statistics_time(mySort s, int size, int num, bool out) {
-    //èŠ±è´¹çš„æ—¶é—´
+    //»¨·ÑµÄÊ±¼ä
     int sum = 0;
     srand((int) time(0));
     int process = num / 10;
     for (int k = 0; k < num; ++k) {
-        //äº§ç”Ÿéšæœºæ•°
+        //²úÉúËæ»úÊı
         int *p = new int[size];
         for (int i = 0; i < size; ++i) {
             p[i] = rand() % size;
         }
-        //è¾“å‡ºæ—¥å¿—
+        //Êä³öÈÕÖ¾
         for (int i = 0; i < size && out; ++i) {
             cout << p[i] << ' ';
         }
         if (out) {
             cout << endl;
         }
-        //æ‰“å°æ—¶é—´
+        //´òÓ¡Ê±¼ä
         int start = time(NULL);
         s(p, size);
         sum += time(NULL) - start;
-        //è¾“å‡ºæ—¥å¿—
+        //Êä³öÈÕÖ¾
         for (int j = 0; j < size && out; ++j) {
             cout << p[j] << ' ';
         }
@@ -6410,8 +6802,9 @@ void statistics_time(mySort s, int size, int num, bool out) {
             cout << ".";
         }
     }
-    //æ‰“å°æ—¶é—´
-    cout << "\n" << sum << endl;
+    //´òÓ¡Ê±¼ä
+    cout << "\n"
+         << sum << endl;
 }
 
 int f(int x, int y, int length) {
@@ -6440,7 +6833,7 @@ string convert(string s, int numRows) {
         result += s[index];
     }
     for (int i = 1; i < numRows - 1; ++i) {
-        //å®šä½ç‚¹
+        //¶¨Î»µã
         for (int j = 0; j < strLength; j++) {
             int index = f(i, j, length);
             if (index >= strLength) {
@@ -6461,7 +6854,7 @@ string convert(string s, int numRows) {
     return result;
 }
 
-int maxLength(vector<vector<char >> &matrix, int i, int j, int temp) {
+int maxLength(vector<vector<char>> &matrix, int i, int j, int temp) {
     int length = matrix.size();
     int width = matrix[0].size();
     if (i + temp >= length || j + temp >= width) {
@@ -6481,7 +6874,7 @@ int maxLength(vector<vector<char >> &matrix, int i, int j, int temp) {
 }
 
 
-int maximalSquare(vector<vector<char >> &matrix) {
+int maximalSquare(vector<vector<char>> &matrix) {
     int max = 0;
     int length = matrix.size();
     int width = matrix[0].size();
@@ -6496,22 +6889,4 @@ int maximalSquare(vector<vector<char >> &matrix) {
         }
     }
     return max;
-}
-
-int maxArea(vector<int> &height) {
-    int maxNum = 0;
-    int front = 0;
-    int last = height.size() - 1;
-    while (front < last) {
-        int h = min(height[front], height[last]);
-        int temp = h * (last - front);
-//        cout << front << '\t' << last << '\t' << temp << '\n';
-        maxNum = max(maxNum, temp);
-        if (height[front] < height[last]) {
-            front++;
-        } else {
-            last--;
-        }
-    }
-    return maxNum;
 }
